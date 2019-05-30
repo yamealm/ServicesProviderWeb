@@ -103,4 +103,6 @@ public class PreferenceField extends AbstractSPEntity implements Serializable {
     public String getTableName() throws TableNotFoundException {
         return super.getTableName(this.getClass());
     }
+    
+//ejem
 }
