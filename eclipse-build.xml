@@ -1,0 +1,35 @@
+<project name="ServicesProviderCommons" default="jar">
+
+	<!-- ============ Project Settings ====================================-->
+	<property environment="env" />
+	<property name="PROJECT_HOME" value="./" />
+	<property name="BUILD_DIR" value="${PROJECT_HOME}/build" />
+	<property name="JAVA_BUILD_DIR" value="${BUILD_DIR}" />
+	<property name="JAVA_SRC_DIR" value="${PROJECT_HOME}/src" />
+	<property name="SISAC_JAR_DIR" value="../ServicesProviderInstallers/lib/services" />
+	
+	<target name="init">
+		<tstamp>
+			<format property="now" pattern="MMM d yyyy hh:mm aa" />
+		</tstamp>
+	</target>
+
+
+	<!-- =========== Jar DEV ======================================================= -->
+	<target name="jar" depends="init">
+		<jar jarfile="${SISAC_JAR_DIR}/ServicesProviderCommons.jar">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<section name="Alodiga">
+					<attribute name="Implementation-Title" value="ServicesProviderCommons" />
+					<attribute name="Implementation-Build-Date" value="${now}" />
+					<attribute name="Implementation-Vendor" value="" />
+				</section>
+			</manifest>
+			
+			<fileset dir="${JAVA_BUILD_DIR}">
+				<exclude name="*.jar" />
+			</fileset>
+		</jar>
+	</target>
+</project>
