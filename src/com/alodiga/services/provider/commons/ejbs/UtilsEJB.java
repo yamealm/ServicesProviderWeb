@@ -12,7 +12,6 @@ import com.alodiga.services.provider.commons.exceptions.NullParameterException;
 import com.alodiga.services.provider.commons.exceptions.RegisterNotFoundException;
 import com.alodiga.services.provider.commons.genericEJB.EJBRequest;
 import com.alodiga.services.provider.commons.genericEJB.SPGenericEJB;
-import com.alodiga.services.provider.commons.models.Account;
 import com.alodiga.services.provider.commons.models.City;
 import com.alodiga.services.provider.commons.models.Country;
 import com.alodiga.services.provider.commons.models.CountryHasProvider;
@@ -20,14 +19,8 @@ import com.alodiga.services.provider.commons.models.CountryTranslation;
 import com.alodiga.services.provider.commons.models.County;
 import com.alodiga.services.provider.commons.models.Currency;
 import com.alodiga.services.provider.commons.models.Enterprise;
-import com.alodiga.services.provider.commons.models.Invoice;
-import com.alodiga.services.provider.commons.models.IpAddress;
-import com.alodiga.services.provider.commons.models.IpBlackList;
 import com.alodiga.services.provider.commons.models.Language;
-import com.alodiga.services.provider.commons.models.PaymentInfo;
-import com.alodiga.services.provider.commons.models.PaymentType;
 import com.alodiga.services.provider.commons.models.Period;
-import com.alodiga.services.provider.commons.models.SMS;
 import com.alodiga.services.provider.commons.models.State;
 import com.alodiga.services.provider.commons.models.TinType;
 import com.alodiga.services.provider.commons.utils.Mail;
@@ -50,12 +43,9 @@ public interface UtilsEJB extends SPGenericEJB {
 
     public List<Enterprise> getEnterprises() throws EmptyListException, GeneralException, NullParameterException;
 
-    public List<Account> getAccounts() throws EmptyListException, GeneralException, NullParameterException;
-
     public List<Language> getLanguages() throws EmptyListException, GeneralException, NullParameterException;
 
-    public List<Period> getPeriods() throws EmptyListException, GeneralException, NullParameterException;
-
+  
     public List<State> getStateByCountry(EJBRequest request) throws EmptyListException, GeneralException, NullParameterException;
 
     public City loadCity(EJBRequest request) throws RegisterNotFoundException, NullParameterException, GeneralException;
@@ -68,7 +58,6 @@ public interface UtilsEJB extends SPGenericEJB {
 
     public  Enterprise loadEnterprisebyId(Long enterpriseId) throws GeneralException;
     
-    public Account loadAccountbyId(Long accountId) throws GeneralException;
 
     public Float getTotalAmauntbyTransacction(Long accountId, Timestamp date1, Date date2) throws GeneralException, NullParameterException;
 
@@ -80,8 +69,7 @@ public interface UtilsEJB extends SPGenericEJB {
 
     public Language loadLanguage(EJBRequest request) throws RegisterNotFoundException, NullParameterException, GeneralException;
 
-    public Period loadPeriod(EJBRequest request) throws RegisterNotFoundException, NullParameterException, GeneralException;
-
+    
     public State loadState(EJBRequest request) throws RegisterNotFoundException, NullParameterException, GeneralException;
 
     public List<TinType> getTinTypes() throws EmptyListException, GeneralException, NullParameterException;
@@ -106,38 +94,11 @@ public interface UtilsEJB extends SPGenericEJB {
 
     public CountryHasProvider saveCountryHasProvider(CountryHasProvider countryHasProvider) throws NullParameterException, GeneralException;
 
-    public SMS saveSMS(EJBRequest request) throws NullParameterException, GeneralException;
-
+  
     public CountryTranslation saveCountryTranslation(CountryTranslation countryTranslation) throws NullParameterException, GeneralException;
 
     public List<CountryTranslation> getCountryTranslationByCountryId(Long countryId) throws EmptyListException, NullParameterException, GeneralException;
 
-    public List<SMS> searchSMS(Date beginningDate, Date endingDate, Account account) throws GeneralException, NullParameterException, EmptyListException;
-
-    public int getInvoiceByAccontId(Long accountId) throws GeneralException, NullParameterException;
-
-    public  List<Invoice> loadInvoicesbyId(EJBRequest request) throws GeneralException, NullParameterException, EmptyListException;
-
-    public List<Invoice> loadInvoicesbyIds(Long accountId) throws GeneralException;
-
-    public Invoice loadInvoices(Long invoiceId) throws GeneralException;
-
-    public List<PaymentType> getPaymentTypes() throws GeneralException, EmptyListException;
-
-    public Period loadperiod(Period period) throws RegisterNotFoundException, NullParameterException, GeneralException;
-
-    public boolean isIpAddresInBlackList(String ipAddress) throws NullParameterException, GeneralException;
-
-    public IpBlackList saveIpBlackList(IpBlackList ipBlackList) throws NullParameterException, GeneralException;
-
-    public IpAddress loadIpddress(String ipAddress) throws RegisterNotFoundException, NullParameterException, GeneralException;
-
-    public List<IpBlackList> getBlackList() throws GeneralException, EmptyListException;
-
-    public IpBlackList loadBlackList(String ipAddress) throws RegisterNotFoundException, NullParameterException, GeneralException;
-
-    public void deleteIpBlackList(String ipBlackList) throws NullParameterException, GeneralException;
-
-    public PaymentInfo loadPaymentInfoBySisacId(String referenceCode) throws RegisterNotFoundException, NullParameterException, GeneralException;
-
+ 
+    
   }

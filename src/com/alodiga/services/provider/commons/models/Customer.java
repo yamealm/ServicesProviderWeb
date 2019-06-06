@@ -59,8 +59,6 @@ public class Customer extends AbstractSPEntity implements Serializable {
     @ManyToOne(cascade = CascadeType.REFRESH)
     @JoinColumn(name = "enterpriseId")
     private Enterprise enterprise;
-    @OneToMany(mappedBy = "customer", cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
-    private List<Pin> pins;
     @ManyToOne(cascade = {CascadeType.REFRESH})
     @JoinColumn(name = "addressId")
     private Address address;
@@ -187,14 +185,6 @@ public class Customer extends AbstractSPEntity implements Serializable {
 
     public void setEnterprise(Enterprise enterprise) {
         this.enterprise = enterprise;
-    }
-
-    public List<Pin> getPins() {
-        return pins;
-    }
-
-    public void setPins(List<Pin> pins) {
-        this.pins = pins;
     }
 
     @Override

@@ -38,13 +38,9 @@ public interface UserEJB extends SPGenericEJB {
 
     public boolean validateExistingUser(EJBRequest request) throws NullParameterException, GeneralException;
 
-    public Float getPointsByDistributor(Long distributorId, int previousDays) throws NullParameterException, GeneralException;
-
     public List<User> getUserTopUpNotification() throws EmptyListException, GeneralException;
 
     public void updateUserNotifications(String ids) throws NullParameterException, GeneralException;
-
-    public Float getTotalPointsByDistributor(Long distributorId, Date beginningDate, Date endingDate) throws NullParameterException, GeneralException;
 
     public List<PermissionGroup> getPermissionGroups() throws EmptyListException, NullParameterException, GeneralException;
 
@@ -57,7 +53,6 @@ public interface UserEJB extends SPGenericEJB {
     public Permission loadPermissionById(Long permissionId) throws GeneralException, NullParameterException, RegisterNotFoundException;
 
     public List<Profile> getProfiles() throws EmptyListException, GeneralException;
-
 
     public User loadUserByLogin(String login) throws RegisterNotFoundException, NullParameterException, GeneralException;
 

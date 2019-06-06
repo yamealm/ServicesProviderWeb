@@ -46,13 +46,10 @@ public class Enterprise extends AbstractSPEntity implements Serializable {
     @ManyToOne(cascade = {CascadeType.REFRESH})
     @JoinColumn(name = "countryId")
     private Country country;
-    //bi-directional many-to-one association to EnterpriseHasTinType
-    @OneToMany(mappedBy = "enterprise", fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH})
-    private List<EnterpriseHasTinType> enterpriseHasTinTypes;
-    //bi-directional many-to-one association to Preference
-    @OneToMany(mappedBy = "enterprise", cascade = {CascadeType.REFRESH})
-    private List<PreferenceValue> preferenceValues;
-    //bi-directional many-to-one association to Tax
+//    //bi-directional many-to-one association to EnterpriseHasTinType
+//    @OneToMany(mappedBy = "enterprise", fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH})
+//    private List<EnterpriseHasTinType> enterpriseHasTinTypes;
+
 
     public Enterprise() {
     }
@@ -145,28 +142,13 @@ public class Enterprise extends AbstractSPEntity implements Serializable {
         this.country = country;
     }
 
-    public List<EnterpriseHasTinType> getEnterpriseHasTinTypes() {
-        return this.enterpriseHasTinTypes;
-    }
-
-    public void setEnterpriseHasTinTypes(List<EnterpriseHasTinType> enterpriseHasTinTypes) {
-        this.enterpriseHasTinTypes = enterpriseHasTinTypes;
-    }
-//    public List<Preference> getPreference() {
-//        return this.preference;
+//    public List<EnterpriseHasTinType> getEnterpriseHasTinTypes() {
+//        return this.enterpriseHasTinTypes;
 //    }
 //
-//    public void setPreference(List<Preference> preference) {
-//        this.preference = preference;
+//    public void setEnterpriseHasTinTypes(List<EnterpriseHasTinType> enterpriseHasTinTypes) {
+//        this.enterpriseHasTinTypes = enterpriseHasTinTypes;
 //    }
-
-    public List<PreferenceValue> getPreferenceValues() {
-        return this.preferenceValues;
-    }
-
-    public void setPreferenceValues(List<PreferenceValue> preferenceValues) {
-        this.preferenceValues = preferenceValues;
-    }
 
     @Override
     public String toString() {

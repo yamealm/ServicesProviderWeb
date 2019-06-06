@@ -65,11 +65,6 @@ public class Product extends AbstractSPEntity implements Serializable {
     @JoinColumn(name = "enterpriseId")
     private Enterprise enterprise;
     
-    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST})
-    private List<ProductData> productData;
-    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST})
-    private List<ProductDenomination> productDenominations;
-
     public Product() {
     }
 
@@ -153,23 +148,6 @@ public class Product extends AbstractSPEntity implements Serializable {
         this.enterprise = enterprise;
     }
 
-    public List<ProductData> getProductData() {
-        return this.productData;
-    }
-
-    public void setProductData(List<ProductData> productData) {
-        this.productData = productData;
-    }
-
-    public List<ProductDenomination> getProductDenominations() {
-
-        Collections.sort(productDenominations, new AmmountComparator());
-        return this.productDenominations;
-    }
-
-    public void setProductDenominations(List<ProductDenomination> productDenominations) {
-        this.productDenominations = productDenominations;
-    }
 
     @Override
     public Object getPk() {
@@ -195,14 +173,5 @@ public class Product extends AbstractSPEntity implements Serializable {
         }
     }
 
-    public ProductData getProductDataByLanguageId(Long languageId) {
-        ProductData pd = null;
-        for (ProductData pData : this.productData) {
-            if (pData.getLanguage().getId().equals(languageId)) {
-                pd = pData;
-                break;
-            }
-        }
-        return pd;
-    }
+
 }
