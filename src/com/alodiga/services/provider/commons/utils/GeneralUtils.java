@@ -1,7 +1,7 @@
 package com.alodiga.services.provider.commons.utils;
 
 import com.alodiga.services.provider.commons.exceptions.GeneralException;
-import com.alodiga.services.provider.commons.managers.PreferenceManager;
+//import com.alodiga.services.provider.commons.managers.PreferenceManager;
 import com.alodiga.services.provider.commons.models.PreferenceFieldEnum;
 
 import java.lang.reflect.Method;
@@ -340,18 +340,18 @@ public class GeneralUtils {
         return stringCut;
     }
 
-    public static Float getExchangeAmount(Float amount, Long enterpriseId) throws GeneralException {
-        Float exchangeMount = 0F;
-        PreferenceManager pm = null;
-        try {
-            pm = PreferenceManager.getInstance();
-            String pointExchange = pm.getPreferencesValueByEnterpriseAndPreferenceId(enterpriseId, PreferenceFieldEnum.POINT_EXCHANGE.getId());
-            exchangeMount = amount * Float.parseFloat(pointExchange);
-        } catch (Exception ex) {
-            throw new GeneralException(ex.getMessage());
-        }
-        return exchangeMount;
-    }
+//    public static Float getExchangeAmount(Float amount, Long enterpriseId) throws GeneralException {
+//        Float exchangeMount = 0F;
+//        PreferenceManager pm = null;
+//        try {
+//            pm = PreferenceManager.getInstance();
+//            String pointExchange = pm.getPreferencesValueByEnterpriseAndPreferenceId(enterpriseId, PreferenceFieldEnum.POINT_EXCHANGE.getId());
+//            exchangeMount = amount * Float.parseFloat(pointExchange);
+//        } catch (Exception ex) {
+//            throw new GeneralException(ex.getMessage());
+//        }
+//        return exchangeMount;
+//    }
 
     public static boolean isValidUSAPhoneNumber(String number) {
 

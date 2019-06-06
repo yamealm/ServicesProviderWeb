@@ -2,7 +2,7 @@ package com.alodiga.services.provider.commons.utils;
 
 public class EjbConstants {
 
-    public static String SERVER = "services01.vpn.alodiga.com";
+    public static String SERVER = "localhost";
 //    public static String SERVER = "app2.vpn.alodiga.com";
     public static String PORT = "3700";
     public static final String ACCESS_CONTROL_EJB = "ejb/services/provider/AccessControlEJB";
