@@ -36,34 +36,32 @@ public class Product extends AbstractSPEntity implements Serializable {
     public static final String ACCESS_NUMBER_URL = "accessNumberUrl";
     public static final String ENABLED = "enabled";
     public static final String NAME = "name";
-    public static final String RATES_URL = "ratesUrl";
-    public static final String REFERENCE_CODE = "referenceCode";
-    public static final String TAX_INCLUDE = "taxInclude";
     public static final String CATEGORY_ID = "categoryId";
     public static final String PROVIDER_ID = "providerId";
-    public static final String PRODUCT_INTEGRATION_TYPE_ID = "productIntegrationTypeId";
     public static final String ENTERPRISE_ID = "enterpriseId";
-    public static final Long ELECTRONIC_PIN_ID = 1L;
-    public static final Long TOP_UP_PRODUCT_ID = 3L;
-    public static final Long BILLPAYMENT_ID = 4L;
-    public static final Long PINLESS_ID = 5L;
+
 
     
-    private String accessNumberUrl;
-    private boolean enabled;
-    private String name;
-    private boolean isFree;
-    private String ratesUrl;
-    private String referenceCode;
-    private boolean taxInclude;
-    //bi-directional many-to-one association to Category
-    @ManyToOne
-    @JoinColumn(name = "categoryId")
-    private Category category;
+    private String partNumber;
+    private String description;
     //bi-directional many-to-one association to Enterprise
     @ManyToOne
     @JoinColumn(name = "enterpriseId")
     private Enterprise enterprise;
+    private String actNpNsn;
+    private String ubicationBox;
+    private String ubicationFolder;
+    private String batchNumber;
+    private int stockMin;
+    private int stockMax;
+    private float amount;
+    private boolean enabled;
+    
+// 
+//    //bi-directional many-to-one association to Category
+//    @ManyToOne
+//    @JoinColumn(name = "categoryId")
+//    private Category category;
     
     public Product() {
     }
@@ -76,80 +74,97 @@ public class Product extends AbstractSPEntity implements Serializable {
         this.id = id;
     }
 
-    public String getAccessNumberUrl() {
-        return this.accessNumberUrl;
-    }
+   
 
-    public void setAccessNumberUrl(String accessNumberUrl) {
-        this.accessNumberUrl = accessNumberUrl;
-    }
+    public String getPartNumber() {
+		return partNumber;
+	}
 
-    public boolean getEnabled() {
-        return this.enabled;
-    }
+	public void setPartNumber(String partNumber) {
+		this.partNumber = partNumber;
+	}
 
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
+	public String getDescription() {
+		return description;
+	}
 
-    public boolean getIsFree() {
-        return isFree;
-    }
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-    public void setIsFree(boolean isFree) {
-        this.isFree = isFree;
-    }
+	public Enterprise getEnterprise() {
+		return enterprise;
+	}
 
-    public String getName() {
-        return this.name;
-    }
+	public void setEnterprise(Enterprise enterprise) {
+		this.enterprise = enterprise;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public String getActNpNsn() {
+		return actNpNsn;
+	}
 
-    public String getRatesUrl() {
-        return this.ratesUrl;
-    }
+	public void setActNpNsn(String actNpNsn) {
+		this.actNpNsn = actNpNsn;
+	}
 
-    public void setRatesUrl(String ratesUrl) {
-        this.ratesUrl = ratesUrl;
-    }
+	public String getUbicationBox() {
+		return ubicationBox;
+	}
 
-    public String getReferenceCode() {
-        return this.referenceCode;
-    }
+	public void setUbicationBox(String ubicationBox) {
+		this.ubicationBox = ubicationBox;
+	}
 
-    public void setReferenceCode(String referenceCode) {
-        this.referenceCode = referenceCode;
-    }
+	public String getUbicationFolder() {
+		return ubicationFolder;
+	}
 
-    public boolean getTaxInclude() {
-        return this.taxInclude;
-    }
+	public void setUbicationFolder(String ubicationFolder) {
+		this.ubicationFolder = ubicationFolder;
+	}
 
-    public void setTaxInclude(boolean taxInclude) {
-        this.taxInclude = taxInclude;
-    }
+	public String getBatchNumber() {
+		return batchNumber;
+	}
 
-    public Category getCategory() {
-        return this.category;
-    }
+	public void setBatchNumber(String batchNumber) {
+		this.batchNumber = batchNumber;
+	}
 
-    public void setCategory(Category category) {
-        this.category = category;
-    }
+	public int getStockMin() {
+		return stockMin;
+	}
 
-    public Enterprise getEnterprise() {
-        return this.enterprise;
-    }
+	public void setStockMin(int stockMin) {
+		this.stockMin = stockMin;
+	}
 
-    public void setEnterprise(Enterprise enterprise) {
-        this.enterprise = enterprise;
-    }
+	public int getStockMax() {
+		return stockMax;
+	}
 
+	public void setStockMax(int stockMax) {
+		this.stockMax = stockMax;
+	}
 
-    @Override
+	public float getAmount() {
+		return amount;
+	}
+
+	public void setAmount(float amount) {
+		this.amount = amount;
+	}
+
+	public boolean getEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	@Override
     public Object getPk() {
         return getId();
     }

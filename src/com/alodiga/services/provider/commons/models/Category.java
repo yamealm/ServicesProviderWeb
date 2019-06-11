@@ -17,8 +17,6 @@ import com.alodiga.services.provider.commons.genericEJB.AbstractSPEntity;
 @Table(name = "category")
 public class Category extends AbstractSPEntity implements Serializable {
 
-    public static Long ELECTRONIC_PIN = 1L;
-    public static Long TOP_UP = 2L;
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

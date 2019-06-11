@@ -42,26 +42,15 @@ public class Customer extends AbstractSPEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Timestamp birthDate;
-    private String civilState;
+    private String firstName;
+    private String lastName;
     private Timestamp creationDate;
     private String email;
-    private boolean enabled;
-    private String facebookAccount;
-    private String firstName;
-    private String gender;
-    private String lastName;
-    private String login;
-    private String password;
     private String phoneNumber;
-    private String twitterAccount;
-    //bi-directional many-to-one association to Enterprise
-    @ManyToOne(cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "enterpriseId")
-    private Enterprise enterprise;
-    @ManyToOne(cascade = {CascadeType.REFRESH})
-    @JoinColumn(name = "addressId")
-    private Address address;
+    private String dni;
+    private String address;
+    private boolean enabled;
+  
 
     public Customer() {
     }
@@ -74,120 +63,72 @@ public class Customer extends AbstractSPEntity implements Serializable {
         this.id = id;
     }
 
-    public Timestamp getBirthDate() {
-        return this.birthDate;
-    }
-
-    public void setBirthDate(Timestamp birthDate) {
-        this.birthDate = birthDate;
-    }
-
-    public String getCivilState() {
-        return this.civilState;
-    }
-
-    public void setCivilState(String civilState) {
-        this.civilState = civilState;
-    }
-
-    public Timestamp getCreationDate() {
-        return this.creationDate;
-    }
-
-    public void setCreationDate(Timestamp creationDate) {
-        this.creationDate = creationDate;
-    }
-
-    public String getEmail() {
-        return this.email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public boolean getEnabled() {
-        return this.enabled;
-    }
-
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
-
+  
     public String getFirstName() {
-        return this.firstName;
-    }
+		return firstName;
+	}
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
-    public String getGender() {
-        return this.gender;
-    }
+	public String getLastName() {
+		return lastName;
+	}
 
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
-    public String getLastName() {
-        return this.lastName;
-    }
+	public Timestamp getCreationDate() {
+		return creationDate;
+	}
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+	public void setCreationDate(Timestamp creationDate) {
+		this.creationDate = creationDate;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
 
-    public String getLogin() {
-        return this.login;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public void setLogin(String login) {
-        this.login = login;
-    }
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
 
-    public String getPassword() {
-        return this.password;
-    }
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public String getDni() {
+		return dni;
+	}
 
-    public String getPhoneNumber() {
-        return this.phoneNumber;
-    }
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
+	public boolean getEnabled() {
+		return enabled;
+	}
 
-    public String getFacebookAccount() {
-        return facebookAccount;
-    }
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
 
-    public void setFacebookAccount(String facebookAccount) {
-        this.facebookAccount = facebookAccount;
-    }
+	public String getAddress() {
+		return address;
+	}
 
-    public String getTwitterAccount() {
-        return twitterAccount;
-    }
+	public void setAddress(String address) {
+		this.address = address;
+	}
 
-    public void setTwitterAccount(String twitterAccount) {
-        this.twitterAccount = twitterAccount;
-    }
-
-
-    public Enterprise getEnterprise() {
-        return this.enterprise;
-    }
-
-    public void setEnterprise(Enterprise enterprise) {
-        this.enterprise = enterprise;
-    }
-
-    @Override
+	@Override
     public String toString() {
         return super.toString();
     }
@@ -212,11 +153,4 @@ public class Customer extends AbstractSPEntity implements Serializable {
         }
     }
 
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
 }

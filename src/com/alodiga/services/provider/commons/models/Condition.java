@@ -1,32 +1,30 @@
 package com.alodiga.services.provider.commons.models;
 
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import com.alodiga.services.provider.commons.exceptions.TableNotFoundException;
 import com.alodiga.services.provider.commons.genericEJB.AbstractSPEntity;
 
 @Entity
-@Table(name = "provider")
-public class Provider extends AbstractSPEntity implements Serializable {
+@Table(name = "condition")
+public class Condition extends AbstractSPEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String address;
     private boolean enabled;
+    private String name;
 
-    public Provider() {
-    }
-
-    public Provider(Long id) {
-        this.id = id;
+    public Condition() {
     }
 
     public Long getId() {
@@ -37,6 +35,14 @@ public class Provider extends AbstractSPEntity implements Serializable {
         this.id = id;
     }
 
+    public boolean getEnabled() {
+        return this.enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
     public String getName() {
         return this.name;
     }
@@ -45,16 +51,7 @@ public class Provider extends AbstractSPEntity implements Serializable {
         this.name = name;
     }
 
-
-    public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	@Override
+    @Override
     public Object getPk() {
         return getId();
     }
@@ -64,26 +61,8 @@ public class Provider extends AbstractSPEntity implements Serializable {
         return super.toString();
     }
 
-    public boolean getEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
-
-
     @Override
     public String getTableName() throws TableNotFoundException {
         return super.getTableName(this.getClass());
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        if (object instanceof Provider) {
-            return this.getId().equals(((Provider) object).getId());
-        } else {
-            return false;
-        }
     }
 }
