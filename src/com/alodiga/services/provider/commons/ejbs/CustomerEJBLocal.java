@@ -23,17 +23,11 @@ public interface CustomerEJBLocal extends SPGenericEJB {
 
     public Customer loadCustomer(EJBRequest request) throws GeneralException, RegisterNotFoundException, NullParameterException;
 
-    public Customer loadCustomerByAni(String ani) throws RegisterNotFoundException, GeneralException, NullParameterException;
-
     public Customer loadCustomerByEmail(EJBRequest request) throws GeneralException, RegisterNotFoundException, NullParameterException;
 
     public Customer loadCustomerByLogin(EJBRequest request) throws GeneralException, RegisterNotFoundException, NullParameterException;
 
     public Customer loadCustomerByLogin(String login) throws GeneralException, RegisterNotFoundException, NullParameterException;
-
-    public Customer loadCustomerByProductPinFree(String pinFree) throws GeneralException, NullParameterException;
-
-    public Customer loadCustomerBySerial(String serial) throws RegisterNotFoundException, GeneralException, NullParameterException;
 
     public Customer saveCustomer(EJBRequest request) throws GeneralException, NullParameterException;
 

@@ -26,10 +26,8 @@ import javax.persistence.NamedQueries;
 @EntityListeners(SPEntityListerner.class)
 @Table(name = "customer")
 @NamedQueries({
-    @NamedQuery(name = QueryConstants.VALIDATE_CUSTOMER,
-    query = "SELECT c FROM Customer c WHERE c.login=:login AND c.password=:password"),
     @NamedQuery(name = QueryConstants.LOAD_CUSTOMER_BY_LOGIN,
-    query = "SELECT c FROM Customer c WHERE c.login=:login"),
+    query = "SELECT c FROM Customer c WHERE c.dni=:dni"),
     @NamedQuery(name = QueryConstants.LOAD_CUSTOMER_BY_EMAIL,
     query = "SELECT c FROM Customer c WHERE c.email=:email")
 })

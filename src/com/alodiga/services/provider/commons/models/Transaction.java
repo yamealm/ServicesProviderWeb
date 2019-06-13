@@ -56,8 +56,6 @@ public class Transaction extends AbstractSPEntity implements Serializable {
     private String quarantineReason;
     @OneToMany(mappedBy = "transaction", cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
     private List<ProductHistory> productHistories;
-    @OneToMany(mappedBy = "transaction", cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
-    private List<ProductSerie> productSeries; 
 
     public Transaction() {
     }
@@ -190,13 +188,6 @@ public class Transaction extends AbstractSPEntity implements Serializable {
 		this.productHistories = productHistories;
 	}
 
-	public List<ProductSerie> getProductSeries() {
-		return productSeries;
-	}
-
-	public void setProductSeries(List<ProductSerie> productSeries) {
-		this.productSeries = productSeries;
-	}
 
 	@Override
     public Object getPk() {

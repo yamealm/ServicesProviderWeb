@@ -136,6 +136,8 @@ public class QueryConstants {
     public static final String PARAM_TRANSACTION_TYPE_ID = "transactionTypeId";
     public static final String PARAM_TRANSACTION_ITEM_ID = "transactionItemId";
     public static final String PARAM_TRANSACTION_STATUS = "transactionStatus";
+    public static final String PARAM_CATEGORY_ID = "categoryId";
+    public static final String PARAM_CONDITION_ID = "conditionId";
     //public static final String PRODUCT_DETAIL_VALUE_TYPE_ID = "ProductDetailValueTypeId";
     public static final String PARAM_DISTRIBUTOR = "distributor";
     public static final String PARAM_BALANCES_TRANSFERENCES = "balanceTransferences";
