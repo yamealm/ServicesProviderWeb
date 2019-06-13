@@ -46,6 +46,9 @@ public class Transaction extends AbstractSPEntity implements Serializable {
     @ManyToOne(cascade = {CascadeType.REFRESH})
     @JoinColumn(name = "userId")
     private User user;
+    @ManyToOne(cascade = {CascadeType.REFRESH})
+    @JoinColumn(name = "transactionTypeId")
+    private TransactionType transactionType;
     private Timestamp creationDate; 
     private Timestamp transactionDate; 
     private int quantity;
@@ -188,6 +191,13 @@ public class Transaction extends AbstractSPEntity implements Serializable {
 		this.productHistories = productHistories;
 	}
 
+	public TransactionType getTransactionType() {
+		return transactionType;
+	}
+
+	public void setTransactionType(TransactionType transactionType) {
+		this.transactionType = transactionType;
+	}
 
 	@Override
     public Object getPk() {

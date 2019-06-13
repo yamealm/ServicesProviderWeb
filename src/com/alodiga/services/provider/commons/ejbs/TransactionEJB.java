@@ -6,7 +6,7 @@ import javax.ejb.Remote;
 
 import com.alodiga.services.provider.commons.exceptions.EmptyListException;
 import com.alodiga.services.provider.commons.exceptions.GeneralException;
-import com.alodiga.services.provider.commons.exceptions.MinAmountBalanceException;
+import com.alodiga.services.provider.commons.exceptions.NegativeBalanceException;
 import com.alodiga.services.provider.commons.exceptions.NullParameterException;
 import com.alodiga.services.provider.commons.exceptions.RegisterNotFoundException;
 import com.alodiga.services.provider.commons.genericEJB.EJBRequest;
@@ -44,7 +44,9 @@ public interface TransactionEJB extends SPGenericEJB {
  
     public ProductHistory saveProductHistory(EJBRequest request) throws GeneralException, NullParameterException;
 
-    public boolean validateBalance(ProductHistory currentProductHistory, float amount) throws MinAmountBalanceException;
+    public boolean validateBalance(ProductHistory currentProductHistory, float amount, boolean add) throws NegativeBalanceException;
+    
+    public Transaction saveTransactionStock(Transaction transaction) throws GeneralException, NullParameterException, NegativeBalanceException,RegisterNotFoundException;
 
 }
 
