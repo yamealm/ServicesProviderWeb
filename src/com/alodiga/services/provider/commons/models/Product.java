@@ -55,6 +55,8 @@ public class Product extends AbstractSPEntity implements Serializable {
     private int stockMin;
     private int stockMax;
     private float amount;
+    private float inictialAmount;
+    private float realAmount;
     private boolean enabled;
     
 // 
@@ -164,6 +166,22 @@ public class Product extends AbstractSPEntity implements Serializable {
 		this.enabled = enabled;
 	}
 
+	public float getInictialAmount() {
+		return inictialAmount;
+	}
+
+	public void setInictialAmount(float inictialAmount) {
+		this.inictialAmount = inictialAmount;
+	}
+
+	public float getRealAmount() {
+		return realAmount;
+	}
+
+	public void setRealAmount(float realAmount) {
+		this.realAmount = realAmount;
+	}
+
 	@Override
     public Object getPk() {
         return getId();
@@ -178,6 +196,8 @@ public class Product extends AbstractSPEntity implements Serializable {
     public String getTableName() throws TableNotFoundException {
         return super.getTableName(this.getClass());
     }
+    
+    
 
     @Override
     public boolean equals(Object object) {
