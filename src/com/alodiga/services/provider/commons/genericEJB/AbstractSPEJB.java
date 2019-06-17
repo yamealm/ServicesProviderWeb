@@ -77,9 +77,9 @@ public class AbstractSPEJB {
         if (entity == null) {
             throw new NullParameterException( sysError.format(EjbConstants.ERR_NULL_PARAMETER, this.getClass(), methodName, "Entity"), null);
         }
-//        EntityTransaction transaction = entityManager.getTransaction();
+        EntityTransaction transaction = entityManager.getTransaction();
         try {
-//            transaction.begin();
+            transaction.begin();
             if (((SPGenericEntity) entity).getPk() != null) {
                 //processAuditData(EventTypeEnum.UPDATE, entity, auditData, entityManagerWrapper);
                 entityManagerWrapper.update(entity);
@@ -88,13 +88,13 @@ public class AbstractSPEJB {
                 //processAuditData(EventTypeEnum.CREATE, entity, auditData, entityManagerWrapper);
             }
 
-//            transaction.commit();
+            transaction.commit();
         } catch (Exception e) {
             e.printStackTrace();
             try {
-//                if (transaction.isActive()) {
-//                    transaction.rollback();
-//                }
+                if (transaction.isActive()) {
+                    transaction.rollback();
+                }
             } catch (IllegalStateException e1) {
                 throw new GeneralException(logger, sysError.format(EjbConstants.ERR_GENERAL_EXCEPTION, this.getClass(), methodName, e.getMessage()), e);
             } catch (SecurityException e1) {
@@ -255,10 +255,10 @@ public class AbstractSPEJB {
             System.out.println("EJB empty");
             throw new NullParameterException("NullParameterException ");
         }
-//        EntityTransaction transaction = entityManager.getTransaction();
+        EntityTransaction transaction = entityManager.getTransaction();
         try {
 
-//            transaction.begin();
+            transaction.begin();
             if (((SPGenericEntity) entity).getPk() != null) {
                 //processAuditData(EventTypeEnum.UPDATE, entity, auditData, entityManagerWrapper);
                 entityManagerWrapper.update(entity);
@@ -266,14 +266,14 @@ public class AbstractSPEJB {
                 entityManagerWrapper.save(entity);
                 //processAuditData(EventTypeEnum.CREATE, entity, auditData, entityManagerWrapper);
             }
-//            transaction.commit();
+            transaction.commit();
         } catch (Exception e) {
             e.printStackTrace();
-//            try {
-//                transaction.rollback();
-//            } catch (Exception e1) {
-//                throw new GeneralException("GeneralException saveEntity");
-//            }
+            try {
+                transaction.rollback();
+            } catch (Exception e1) {
+                throw new GeneralException("GeneralException saveEntity");
+            }
             throw new GeneralException("GeneralException saveEntity");
         }
 
