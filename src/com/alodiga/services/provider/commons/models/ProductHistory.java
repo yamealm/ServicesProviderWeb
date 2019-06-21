@@ -26,6 +26,8 @@ public class ProductHistory extends AbstractSPEntity implements Serializable {
     private Long id;
     private int currentQuantity;
     private int oldQuantity;
+    private float currentAmount;
+    private float oldAmount;
     private Timestamp creationDate;
     @ManyToOne(cascade = CascadeType.REFRESH)
     @JoinColumn(name = "productId")
@@ -84,6 +86,22 @@ public class ProductHistory extends AbstractSPEntity implements Serializable {
 
 	public void setTransaction(Transaction transaction) {
 		this.transaction = transaction;
+	}
+
+	public float getCurrentAmount() {
+		return currentAmount;
+	}
+
+	public void setCurrentAmount(float currentAmount) {
+		this.currentAmount = currentAmount;
+	}
+
+	public float getOldAmount() {
+		return oldAmount;
+	}
+
+	public void setOldAmount(float oldAmount) {
+		this.oldAmount = oldAmount;
 	}
 
 	@Override

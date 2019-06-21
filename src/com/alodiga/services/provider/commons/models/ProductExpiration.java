@@ -29,7 +29,7 @@ public class ProductExpiration extends AbstractSPEntity implements Serializable 
     @JoinColumn(name = "productId")
     private Product product;
     private int quantity;
-    private String amount;
+    private Float amount;
     @ManyToOne(cascade = CascadeType.REFRESH)
     @JoinColumn(name = "providerId")
     private Provider provider;
@@ -81,11 +81,11 @@ public class ProductExpiration extends AbstractSPEntity implements Serializable 
 		this.quantity = quantity;
 	}
 
-	public String getAmount() {
+	public Float getAmount() {
 		return amount;
 	}
 
-	public void setAmount(String amount) {
+	public void setAmount(Float amount) {
 		this.amount = amount;
 	}
 

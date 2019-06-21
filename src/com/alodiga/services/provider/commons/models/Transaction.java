@@ -53,6 +53,7 @@ public class Transaction extends AbstractSPEntity implements Serializable {
     private Timestamp transactionDate; 
     private int quantity;
     private String invoice;
+    private String observation;
     private boolean isSerial;
     private Blob form;
     private String orderWord;
@@ -197,6 +198,14 @@ public class Transaction extends AbstractSPEntity implements Serializable {
 
 	public void setTransactionType(TransactionType transactionType) {
 		this.transactionType = transactionType;
+	}
+
+	public String getObservation() {
+		return observation;
+	}
+
+	public void setObservation(String observation) {
+		this.observation = observation;
 	}
 
 	@Override
