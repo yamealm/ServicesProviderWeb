@@ -107,6 +107,7 @@ public class Permission extends AbstractSPEntity implements Serializable {
     public static Long DELETE_IP = 88L;
     public static Long LIST_BLACKIP = 89L;
     public static Long BALANCE_ADJUSMENT = 90L;
+    public static Long LIST_STOCK = 91L;
     
     private static final long serialVersionUID = 1L;
     @Id
