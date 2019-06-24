@@ -1,21 +1,19 @@
 package com.alodiga.services.provider.commons.models;
 
 import java.io.Serializable;
-import java.util.List;
-import javax.persistence.CascadeType;
+
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 import com.alodiga.services.provider.commons.exceptions.TableNotFoundException;
 import com.alodiga.services.provider.commons.genericEJB.AbstractSPEntity;
 
-@Entity
-@Table(name = "condition")
-public class Condition extends AbstractSPEntity implements Serializable {
+@Entity        
+@Table(name = "condicion")
+public class Condicion extends AbstractSPEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -24,7 +22,7 @@ public class Condition extends AbstractSPEntity implements Serializable {
     private boolean enabled;
     private String name;
 
-    public Condition() {
+    public Condicion() {
     }
 
     public Long getId() {

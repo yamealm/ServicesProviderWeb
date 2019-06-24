@@ -1,24 +1,20 @@
 package com.alodiga.services.provider.commons.models;
 
 import java.io.Serializable;
-import java.util.List;
-import javax.persistence.CascadeType;
+
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import com.alodiga.services.provider.commons.exceptions.TableNotFoundException;
-import com.alodiga.services.provider.commons.genericEJB.AbstractSPEntity;
-import com.alodiga.services.provider.commons.utils.AmmountComparator;
-import com.alodiga.services.provider.commons.utils.QueryConstants;
-import java.util.Collections;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+
+import com.alodiga.services.provider.commons.exceptions.TableNotFoundException;
+import com.alodiga.services.provider.commons.genericEJB.AbstractSPEntity;
+import com.alodiga.services.provider.commons.utils.QueryConstants;
 
 @Entity
 @Table(name = "product")
@@ -58,7 +54,7 @@ public class Product extends AbstractSPEntity implements Serializable {
     private float inictialAmount;
     private float realAmount;
     private boolean enabled;
-    
+   
 // 
 //    //bi-directional many-to-one association to Category
 //    @ManyToOne
@@ -181,7 +177,7 @@ public class Product extends AbstractSPEntity implements Serializable {
 	public void setRealAmount(float realAmount) {
 		this.realAmount = realAmount;
 	}
-
+	
 	@Override
     public Object getPk() {
         return getId();

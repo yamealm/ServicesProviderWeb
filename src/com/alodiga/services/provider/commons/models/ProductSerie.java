@@ -24,10 +24,6 @@ public class ProductSerie extends AbstractSPEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Timestamp expirationDate; 
-    private Timestamp cure;
-    private String serie;
-    private Float amount;
     @ManyToOne(cascade = CascadeType.REFRESH)
     @JoinColumn(name = "productId")
     private Product product;
@@ -40,6 +36,13 @@ public class ProductSerie extends AbstractSPEntity implements Serializable {
     @ManyToOne
     @JoinColumn(name = "endingTransactionId")
     private Transaction endingTransactionId;
+    private Timestamp creationDate; 
+    private Timestamp endingDate; 
+    private Float amount;
+    private int quantity;
+    private String serie;
+    private Timestamp cure;
+    private Timestamp expirationDate; 
 
 
     public ProductSerie() {
@@ -115,6 +118,30 @@ public class ProductSerie extends AbstractSPEntity implements Serializable {
 
 	public void setAmount(Float amount) {
 		this.amount = amount;
+	}
+
+	public Timestamp getCreationDate() {
+		return creationDate;
+	}
+
+	public void setCreationDate(Timestamp creationDate) {
+		this.creationDate = creationDate;
+	}
+
+	public Timestamp getEndingDate() {
+		return endingDate;
+	}
+
+	public void setEndingDate(Timestamp endingDate) {
+		this.endingDate = endingDate;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 
 	@Override

@@ -107,7 +107,27 @@ public class Permission extends AbstractSPEntity implements Serializable {
     public static Long DELETE_IP = 88L;
     public static Long LIST_BLACKIP = 89L;
     public static Long BALANCE_ADJUSMENT = 90L;
-    public static Long LIST_STOCK = 91L;
+    public static Long ADD_STOCK = 91L;
+    public static Long REMOVE_STOCK = 92L;
+    public static Long ADD_TRANSIT = 93L;
+    public static Long REMOVE_TRANSIT = 94L;
+    public static Long ADD_QUARANTINE = 95L;
+    public static Long REMOVE_QUARANTINE = 96L;
+    public static Long ADD_WAIT = 97L;
+    public static Long REMOVE_WAIT = 98L;
+    public static Long METEOROLOGICAL_CONTROL = 99L;
+    public static Long MONITORING = 100L;
+    public static Long REPORT_STOCK = 101L;
+    public static Long REPORT_TRANSIT = 102L;
+    public static Long REPORT_QUARANTINE = 103L;
+    public static Long REPORT_WAIT = 104L;
+    public static Long REPORT_METEOROLOGICAL_CONTROL = 105L;
+    public static Long STOCK = 106L;
+    public static Long TRANSIT = 107L;
+    public static Long QUARANTINE = 108L;
+    public static Long WAIT = 109L;
+    
+    
     
     private static final long serialVersionUID = 1L;
     @Id

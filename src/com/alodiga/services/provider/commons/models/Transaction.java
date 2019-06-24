@@ -39,7 +39,7 @@ public class Transaction extends AbstractSPEntity implements Serializable {
     private Category category;
     @ManyToOne(cascade = {CascadeType.REFRESH})
     @JoinColumn(name = "conditionId")
-    private Condition condition;
+    private Condicion condition;
     @ManyToOne(cascade = {CascadeType.REFRESH})
     @JoinColumn(name = "customerId")
     private Customer customer;
@@ -50,14 +50,13 @@ public class Transaction extends AbstractSPEntity implements Serializable {
     @JoinColumn(name = "transactionTypeId")
     private TransactionType transactionType;
     private Timestamp creationDate; 
-    private Timestamp transactionDate; 
     private int quantity;
     private String invoice;
     private String observation;
-    private boolean isSerial;
     private Blob form;
     private String orderWord;
     private String quarantineReason;
+    private Float amount;
     @OneToMany(mappedBy = "transaction", cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
     private List<ProductHistory> productHistories;
 
@@ -94,11 +93,11 @@ public class Transaction extends AbstractSPEntity implements Serializable {
 		this.category = category;
 	}
 
-	public Condition getCondition() {
+	public Condicion getCondition() {
 		return condition;
 	}
 
-	public void setCondition(Condition condition) {
+	public void setCondition(Condicion condition) {
 		this.condition = condition;
 	}
 
@@ -128,14 +127,6 @@ public class Transaction extends AbstractSPEntity implements Serializable {
 	}
 
 
-	public Timestamp getTransactionDate() {
-		return transactionDate;
-	}
-
-	public void setTransactionDate(Timestamp transactionDate) {
-		this.transactionDate = transactionDate;
-	}
-
 	public int getQuantity() {
 		return quantity;
 	}
@@ -150,14 +141,6 @@ public class Transaction extends AbstractSPEntity implements Serializable {
 
 	public void setInvoice(String invoice) {
 		this.invoice = invoice;
-	}
-
-	public boolean isSerial() {
-		return isSerial;
-	}
-
-	public void setSerial(boolean isSerial) {
-		this.isSerial = isSerial;
 	}
 
 	public Blob getForm() {
@@ -206,6 +189,14 @@ public class Transaction extends AbstractSPEntity implements Serializable {
 
 	public void setObservation(String observation) {
 		this.observation = observation;
+	}
+	
+	public Float getAmount() {
+		return amount;
+	}
+
+	public void setAmount(Float amount) {
+		this.amount = amount;
 	}
 
 	@Override

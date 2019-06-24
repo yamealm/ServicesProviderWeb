@@ -12,8 +12,9 @@ import com.alodiga.services.provider.commons.exceptions.RegisterNotFoundExceptio
 import com.alodiga.services.provider.commons.genericEJB.EJBRequest;
 import com.alodiga.services.provider.commons.genericEJB.SPGenericEJB;
 import com.alodiga.services.provider.commons.models.Category;
-import com.alodiga.services.provider.commons.models.Condition;
+import com.alodiga.services.provider.commons.models.Condicion;
 import com.alodiga.services.provider.commons.models.ProductHistory;
+import com.alodiga.services.provider.commons.models.ProductSerie;
 import com.alodiga.services.provider.commons.models.Transaction;
 
 @Local
@@ -22,7 +23,7 @@ public interface TransactionEJBLocal extends SPGenericEJB {
   
     public List<Transaction> getTransactionByCondition(EJBRequest request) throws NullParameterException, EmptyListException, GeneralException;
 
-    public List<Condition> getConditions() throws GeneralException, NullParameterException, EmptyListException;
+    public List<Condicion> getConditions() throws GeneralException, NullParameterException, EmptyListException;
 
     public List<Category> getCategories() throws GeneralException, NullParameterException, EmptyListException;
 
@@ -34,7 +35,7 @@ public interface TransactionEJBLocal extends SPGenericEJB {
 
     public Float getCurrentBalanceByProduct(Long productId) throws NullParameterException, GeneralException;
 
-    public Condition loadConditionbyId(Long id) throws NullParameterException, RegisterNotFoundException, GeneralException;
+    public Condicion loadConditionbyId(Long id) throws NullParameterException, RegisterNotFoundException, GeneralException;
 
     public Category loadCategorybyId(Long id) throws NullParameterException, RegisterNotFoundException, GeneralException;
 
@@ -46,7 +47,7 @@ public interface TransactionEJBLocal extends SPGenericEJB {
 
     public boolean validateBalance(ProductHistory currentProductHistory, float amount, boolean add) throws NegativeBalanceException;
     
-    public Transaction saveTransactionStock(Transaction transaction) throws GeneralException, NullParameterException, NegativeBalanceException,RegisterNotFoundException;
+    public Transaction saveTransactionStock(Transaction transaction, List<ProductSerie> productSeries) throws GeneralException, NullParameterException, NegativeBalanceException,RegisterNotFoundException;
 
 }
 
