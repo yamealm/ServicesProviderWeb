@@ -43,6 +43,12 @@ public class ProductSerie extends AbstractSPEntity implements Serializable {
     private String serie;
     private Timestamp cure;
     private Timestamp expirationDate; 
+    @ManyToOne(cascade = {CascadeType.REFRESH})
+    @JoinColumn(name = "categoryId")
+    private Category category;
+    @ManyToOne(cascade = {CascadeType.REFRESH})
+    @JoinColumn(name = "conditionId")
+    private Condicion condition;
 
 
     public ProductSerie() {
@@ -142,6 +148,24 @@ public class ProductSerie extends AbstractSPEntity implements Serializable {
 
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
+	}
+	
+	
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+	public Condicion getCondition() {
+		return condition;
+	}
+
+	public void setCondition(Condicion condition) {
+		this.condition = condition;
 	}
 
 	@Override

@@ -16,6 +16,13 @@ import com.alodiga.services.provider.commons.genericEJB.AbstractSPEntity;
 public class Condicion extends AbstractSPEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    
+    public static long NEW = 1L;
+    public static long REPAIRED = 2L;
+    public static long OVERHAULD = 3L;
+    public static long INPECTED = 4L;
+    
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

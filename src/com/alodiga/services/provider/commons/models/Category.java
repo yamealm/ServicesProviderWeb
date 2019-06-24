@@ -16,6 +16,12 @@ import com.alodiga.services.provider.commons.genericEJB.AbstractSPEntity;
 public class Category extends AbstractSPEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    public static long STOCK = 1L;
+    public static long TRANSIT = 2L;
+    public static long QUARANTINE = 3L;
+    public static long WAIT = 5L;
+    public static long METEOROLOGICAL_CONTROL = 5L;
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -48,6 +48,8 @@ public interface TransactionEJBLocal extends SPGenericEJB {
     public boolean validateBalance(ProductHistory currentProductHistory, float amount, boolean add) throws NegativeBalanceException;
     
     public Transaction saveTransactionStock(Transaction transaction, List<ProductSerie> productSeries) throws GeneralException, NullParameterException, NegativeBalanceException,RegisterNotFoundException;
+    
+    public List<ProductSerie> searchProductSerieByProductId(Long productId) throws GeneralException, NullParameterException, EmptyListException;
 
 }
 
