@@ -57,6 +57,7 @@ public class Transaction extends AbstractSPEntity implements Serializable {
     private String orderWord;
     private String quarantineReason;
     private Float amount;
+    private boolean enabled;
     @OneToMany(mappedBy = "transaction", cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
     private List<ProductHistory> productHistories;
 
@@ -197,6 +198,14 @@ public class Transaction extends AbstractSPEntity implements Serializable {
 
 	public void setAmount(Float amount) {
 		this.amount = amount;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 
 	@Override

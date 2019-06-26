@@ -49,7 +49,7 @@ public class ProductSerie extends AbstractSPEntity implements Serializable {
     @ManyToOne(cascade = {CascadeType.REFRESH})
     @JoinColumn(name = "conditionId")
     private Condicion condition;
-
+    private boolean enabled;
 
     public ProductSerie() {
     }
@@ -166,6 +166,14 @@ public class ProductSerie extends AbstractSPEntity implements Serializable {
 
 	public void setCondition(Condicion condition) {
 		this.condition = condition;
+	}
+	
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 
 	@Override

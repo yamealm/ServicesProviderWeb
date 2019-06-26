@@ -2,24 +2,21 @@ package com.alodiga.services.provider.commons.exceptions;
 
 import org.apache.log4j.Logger;
 
+public class DisabledUserException extends Exception {
 
-public class MaxLimitRechageException extends Exception {
-    
     private static final long serialVersionUID = 1L;
 
-    public MaxLimitRechageException(String message) {
+    public DisabledUserException(String message) {
         super(message);
     }
 
-    public MaxLimitRechageException(Logger logger, String message, Exception e) {
+    public DisabledUserException(Logger logger, String message, Exception e) {
         super(message, e);
         logger.error(message, e);
-
     }
 
-    public MaxLimitRechageException(String message, StackTraceElement[] stackTrace) {
+    public DisabledUserException(String message, StackTraceElement[] stackTrace) {
         super(message);
         setStackTrace(stackTrace);
     }
-    
 }

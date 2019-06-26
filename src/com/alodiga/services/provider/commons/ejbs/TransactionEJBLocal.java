@@ -49,7 +49,16 @@ public interface TransactionEJBLocal extends SPGenericEJB {
     
     public Transaction saveTransactionStock(Transaction transaction, List<ProductSerie> productSeries) throws GeneralException, NullParameterException, NegativeBalanceException,RegisterNotFoundException;
     
+    public Transaction saveEgressStock(Transaction transaction , List<ProductSerie> productSeries) throws GeneralException, NullParameterException, NegativeBalanceException,RegisterNotFoundException;
+    
     public List<ProductSerie> searchProductSerieByProductId(Long productId) throws GeneralException, NullParameterException, EmptyListException;
+    
+    public Integer loadQuantityByProductId(Long productId)	throws GeneralException, NullParameterException;
+    
+    public boolean validateBalanceProduct(Integer currentQuantity, float amount, boolean isAdd) throws NegativeBalanceException;
+    
+    public Transaction modificarStock(Transaction transaction , List<ProductSerie> productSeries) throws GeneralException, NullParameterException, NegativeBalanceException,RegisterNotFoundException;
 
+    public Transaction deleteStock(Transaction transaction , List<ProductSerie> productSeries) throws GeneralException, NullParameterException, NegativeBalanceException,RegisterNotFoundException;
 }
 

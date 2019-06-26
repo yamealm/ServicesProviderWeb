@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Remote;
 
-import com.alodiga.services.provider.commons.exceptions.DisabledDistributorException;
+import com.alodiga.services.provider.commons.exceptions.DisabledUserException;
 import com.alodiga.services.provider.commons.exceptions.EmptyListException;
 import com.alodiga.services.provider.commons.exceptions.GeneralException;
 import com.alodiga.services.provider.commons.exceptions.NullParameterException;
@@ -41,6 +41,6 @@ public interface AccessControlEJB extends SPGenericEJB {
 
     public boolean validateLoginPreferences(EJBRequest request) throws NullParameterException, GeneralException, RegisterNotFoundException;
 
-    public User validateUser(String login, String password) throws RegisterNotFoundException, NullParameterException, GeneralException, DisabledDistributorException;
+    public User validateUser(String login, String password) throws RegisterNotFoundException, NullParameterException, GeneralException, DisabledUserException;
 
  }
