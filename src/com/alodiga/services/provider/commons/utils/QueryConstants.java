@@ -129,6 +129,7 @@ public class QueryConstants {
     public static final String PARAM_ENABLED = "enabled";
     public static final String PARAM_OBJMAIL = "objMail";
     public static final String PARAM_PRODUCT_ID = "productId";
+    public static final String PARAM_PROVIDER_ID = "providerID";
     public static final String PARAM_ENDED = "ended";
     public static final String PARAM_TRANSACTION = "transaction";
     public static final String PARAM_CUSTOMER = "customer";

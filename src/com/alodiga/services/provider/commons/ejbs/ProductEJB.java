@@ -13,6 +13,7 @@ import com.alodiga.services.provider.commons.genericEJB.EJBRequest;
 import com.alodiga.services.provider.commons.genericEJB.SPGenericEJB;
 import com.alodiga.services.provider.commons.models.Category;
 import com.alodiga.services.provider.commons.models.Product;
+import com.alodiga.services.provider.commons.models.ProductSerie;
 import com.alodiga.services.provider.commons.models.Provider;
 
 @SuppressWarnings("all")
@@ -48,4 +49,6 @@ public interface ProductEJB extends SPGenericEJB {
     public Product saveProduct(EJBRequest request) throws GeneralException, NullParameterException;
 
     public Provider saveProvider(EJBRequest request) throws GeneralException, NullParameterException;
+    
+    public List<ProductSerie> searchProductSerie(EJBRequest request) throws GeneralException, NullParameterException, EmptyListException;
 }

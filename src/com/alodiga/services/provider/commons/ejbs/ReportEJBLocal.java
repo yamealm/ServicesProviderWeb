@@ -10,6 +10,7 @@ import com.alodiga.services.provider.commons.exceptions.RegisterNotFoundExceptio
 import com.alodiga.services.provider.commons.genericEJB.EJBRequest;
 import com.alodiga.services.provider.commons.genericEJB.SPGenericEJB;
 import com.alodiga.services.provider.commons.models.ParameterType;
+import com.alodiga.services.provider.commons.models.Provider;
 import com.alodiga.services.provider.commons.models.Report;
 import com.alodiga.services.provider.commons.models.ReportHasProfile;
 import com.alodiga.services.provider.commons.models.ReportParameter;
@@ -47,4 +48,6 @@ public interface ReportEJBLocal extends SPGenericEJB {
     public List<String> runReport(EJBRequest request) throws NullParameterException, GeneralException, EmptyListException;
 
     public Report saveReport(EJBRequest request) throws NullParameterException, GeneralException, NullParameterException;
+    
+    
 }

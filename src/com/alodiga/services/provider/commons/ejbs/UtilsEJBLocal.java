@@ -20,6 +20,7 @@ import com.alodiga.services.provider.commons.models.County;
 import com.alodiga.services.provider.commons.models.Currency;
 import com.alodiga.services.provider.commons.models.Enterprise;
 import com.alodiga.services.provider.commons.models.Language;
+import com.alodiga.services.provider.commons.models.Provider;
 import com.alodiga.services.provider.commons.models.State;
 import com.alodiga.services.provider.commons.models.TinType;
 import com.alodiga.services.provider.commons.utils.Mail;
@@ -96,6 +97,8 @@ public List<City> getCitiesByCounty(EJBRequest request) throws EmptyListExceptio
     public CountryTranslation saveCountryTranslation(CountryTranslation countryTranslation) throws NullParameterException, GeneralException;
 
     public List<CountryTranslation> getCountryTranslationByCountryId(Long countryId) throws EmptyListException, NullParameterException, GeneralException;
+    
+    public List<Provider> getProvider() throws EmptyListException, GeneralException, NullParameterException;
 
  
   }
