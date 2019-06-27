@@ -13,6 +13,7 @@ import com.alodiga.services.provider.commons.genericEJB.EJBRequest;
 import com.alodiga.services.provider.commons.genericEJB.SPGenericEJB;
 import com.alodiga.services.provider.commons.models.Category;
 import com.alodiga.services.provider.commons.models.Condicion;
+import com.alodiga.services.provider.commons.models.Product;
 import com.alodiga.services.provider.commons.models.ProductHistory;
 import com.alodiga.services.provider.commons.models.ProductSerie;
 import com.alodiga.services.provider.commons.models.Transaction;
@@ -60,5 +61,7 @@ public interface TransactionEJBLocal extends SPGenericEJB {
     public Transaction modificarStock(Transaction transaction , List<ProductSerie> productSeries) throws GeneralException, NullParameterException, NegativeBalanceException,RegisterNotFoundException;
 
     public Transaction deleteStock(Transaction transaction , List<ProductSerie> productSeries) throws GeneralException, NullParameterException, NegativeBalanceException,RegisterNotFoundException;
+    
+    public List<Product> listProducts()	throws GeneralException, NullParameterException, EmptyListException;
 }
 
