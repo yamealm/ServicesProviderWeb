@@ -126,6 +126,17 @@ public class Permission extends AbstractSPEntity implements Serializable {
     public static Long TRANSIT = 107L;
     public static Long QUARANTINE = 108L;
     public static Long WAIT = 109L;
+    public static Long VIEW_STOCK = 110L;
+    public static Long EDIT_STOCK = 111L;
+    public static Long VIEW_TRANSIT = 112L;
+    public static Long EDIT_TRANSIT = 113L;
+    public static Long VIEW_QUARANTINE = 114L;
+    public static Long EDIT_QUARANTINE = 115L;
+    public static Long VIEW_WAIT = 116L;
+    public static Long EDIT_WAIT = 117L;
+    public static Long VIEW_METEOROLOGICAL_CONTROL = 118L;
+    public static Long EDIT_METEOROLOGICAL_CONTROL = 119L;
+    
     
     
     
