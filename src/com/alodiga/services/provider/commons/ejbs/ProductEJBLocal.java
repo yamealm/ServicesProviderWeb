@@ -50,6 +50,10 @@ public interface ProductEJBLocal extends SPGenericEJB {
     public Provider saveProvider(EJBRequest request) throws GeneralException, NullParameterException;
     
     public List<ProductSerie> searchProductSerie(EJBRequest request) throws GeneralException, NullParameterException, EmptyListException;
+    
+    public List<ProductSerie> getProductDefeated() throws GeneralException, NullParameterException, EmptyListException;
+    
+    public List<ProductSerie> getProductDefeated(int dayEnding) throws GeneralException, NullParameterException, EmptyListException;
 
    
 }
