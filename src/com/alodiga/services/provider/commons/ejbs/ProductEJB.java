@@ -55,4 +55,6 @@ public interface ProductEJB extends SPGenericEJB {
     public List<ProductSerie> getProductDefeated() throws GeneralException, NullParameterException, EmptyListException;
     
     public List<ProductSerie> getProductDefeated(int dayEnding) throws GeneralException, NullParameterException, EmptyListException;
+    
+    public List<ProductSerie> getProductDefeatedCure(int dayEnding) throws GeneralException, NullParameterException, EmptyListException;
 }
