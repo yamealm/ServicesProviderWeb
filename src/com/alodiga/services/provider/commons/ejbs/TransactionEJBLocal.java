@@ -54,7 +54,7 @@ public interface TransactionEJBLocal extends SPGenericEJB {
     
     public List<ProductSerie> searchProductSerieByProductId(Long productId, Long categoryId) throws GeneralException, NullParameterException, EmptyListException;
     
-    public Integer loadQuantityByProductId(Long productId)	throws GeneralException, NullParameterException;
+    public Integer loadQuantityByProductId(Long productId, Long categoryId)	throws GeneralException, NullParameterException;
     
     public boolean validateBalanceProduct(Integer currentQuantity, float amount, boolean isAdd) throws NegativeBalanceException;
     
