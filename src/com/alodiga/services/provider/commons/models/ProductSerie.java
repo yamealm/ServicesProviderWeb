@@ -49,6 +49,11 @@ public class ProductSerie extends AbstractSPEntity implements Serializable {
     @ManyToOne(cascade = {CascadeType.REFRESH})
     @JoinColumn(name = "conditionId")
     private Condicion condition;
+    @ManyToOne(cascade = {CascadeType.REFRESH})
+    @JoinColumn(name = "customerId")
+    private Customer customer;
+    private String orderWord;
+    private String quarantineReason;
 
     public ProductSerie() {
     }
@@ -167,6 +172,32 @@ public class ProductSerie extends AbstractSPEntity implements Serializable {
 		this.condition = condition;
 	}
 	
+	
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
+	public String getOrderWord() {
+		return orderWord;
+	}
+
+	public void setOrderWord(String orderWord) {
+		this.orderWord = orderWord;
+	}
+
+	
+	public String getQuarantineReason() {
+		return quarantineReason;
+	}
+
+	public void setQuarantineReason(String quarantineReason) {
+		this.quarantineReason = quarantineReason;
+	}
+
 	@Override
     public String toString() {
         return super.toString();

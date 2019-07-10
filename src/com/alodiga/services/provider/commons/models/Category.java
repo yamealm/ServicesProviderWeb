@@ -19,7 +19,7 @@ public class Category extends AbstractSPEntity implements Serializable {
     public static long STOCK = 1L;
     public static long TRANSIT = 2L;
     public static long QUARANTINE = 3L;
-    public static long WAIT = 5L;
+    public static long WAIT = 4L;
     public static long METEOROLOGICAL_CONTROL = 5L;
     
     @Id

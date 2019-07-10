@@ -136,7 +136,8 @@ public class Permission extends AbstractSPEntity implements Serializable {
     public static Long EDIT_WAIT = 117L;
     public static Long VIEW_METEOROLOGICAL_CONTROL = 118L;
     public static Long EDIT_METEOROLOGICAL_CONTROL = 119L;
-    
+    public static Long ADD_METEOROLOGICAL_CONTROL = 120L;
+    public static Long REMOVE_METEOROLOGICAL_CONTROL = 121L;
     
     
     
