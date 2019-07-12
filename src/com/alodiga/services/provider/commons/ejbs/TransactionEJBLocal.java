@@ -63,5 +63,7 @@ public interface TransactionEJBLocal extends SPGenericEJB {
     public Transaction deleteStock(Transaction transaction , ProductSerie productSeries) throws GeneralException, NullParameterException, NegativeBalanceException,RegisterNotFoundException;
     
     public List<Product> listProducts()	throws GeneralException, NullParameterException, EmptyListException;
+    
+    public List<ProductSerie> searchProductSerieByCategoryId(Long categoryId) throws GeneralException, NullParameterException, EmptyListException;
 }
 

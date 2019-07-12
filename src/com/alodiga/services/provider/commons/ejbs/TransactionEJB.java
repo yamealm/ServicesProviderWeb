@@ -64,5 +64,6 @@ public interface TransactionEJB extends SPGenericEJB {
     
     public List<Product> listProducts()	throws GeneralException, NullParameterException, EmptyListException;
 
+    public List<ProductSerie> searchProductSerieByCategoryId(Long categoryId) throws GeneralException, NullParameterException, EmptyListException;
 }
 
