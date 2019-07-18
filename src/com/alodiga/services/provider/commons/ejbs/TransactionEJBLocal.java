@@ -17,6 +17,7 @@ import com.alodiga.services.provider.commons.models.Product;
 import com.alodiga.services.provider.commons.models.ProductHistory;
 import com.alodiga.services.provider.commons.models.ProductSerie;
 import com.alodiga.services.provider.commons.models.Transaction;
+import com.alodiga.services.provider.commons.models.TransactionType;
 
 @Local
 public interface TransactionEJBLocal extends SPGenericEJB {
@@ -65,5 +66,7 @@ public interface TransactionEJBLocal extends SPGenericEJB {
     public List<Product> listProducts()	throws GeneralException, NullParameterException, EmptyListException;
     
     public List<ProductSerie> searchProductSerieByCategoryId(Long categoryId) throws GeneralException, NullParameterException, EmptyListException;
+    
+    public List<TransactionType> getTransactionTypes() throws GeneralException, NullParameterException, EmptyListException;
 }
 

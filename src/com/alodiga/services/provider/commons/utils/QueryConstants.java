@@ -163,4 +163,5 @@ public class QueryConstants {
     public static final String STATUS_ACCOUNT_ALL= "ALL";
     public static final String STATUS_ACCOUNT_ENABLED= "1";
     public static final String ACCOUNT_HAS_PRODUCT = "accountHasProduct";
+    public static final String PARAM_WORK_ORDER= "workOrder";
 }
