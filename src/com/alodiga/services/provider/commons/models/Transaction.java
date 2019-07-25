@@ -57,6 +57,7 @@ public class Transaction extends AbstractSPEntity implements Serializable {
     private String orderWord;
     private String quarantineReason;
     private Float amount;
+    private String work;
     @OneToMany(mappedBy = "transaction", cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
     private List<ProductHistory> productHistories;
 
@@ -197,6 +198,16 @@ public class Transaction extends AbstractSPEntity implements Serializable {
 
 	public void setAmount(Float amount) {
 		this.amount = amount;
+	}
+	
+	
+
+	public String getWork() {
+		return work;
+	}
+
+	public void setWork(String work) {
+		this.work = work;
 	}
 
 	@Override
