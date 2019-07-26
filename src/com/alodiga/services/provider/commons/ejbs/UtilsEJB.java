@@ -12,14 +12,18 @@ import com.alodiga.services.provider.commons.exceptions.NullParameterException;
 import com.alodiga.services.provider.commons.exceptions.RegisterNotFoundException;
 import com.alodiga.services.provider.commons.genericEJB.EJBRequest;
 import com.alodiga.services.provider.commons.genericEJB.SPGenericEJB;
+import com.alodiga.services.provider.commons.models.Braund;
 import com.alodiga.services.provider.commons.models.City;
+import com.alodiga.services.provider.commons.models.ControlType;
 import com.alodiga.services.provider.commons.models.Country;
 import com.alodiga.services.provider.commons.models.CountryHasProvider;
 import com.alodiga.services.provider.commons.models.CountryTranslation;
 import com.alodiga.services.provider.commons.models.County;
 import com.alodiga.services.provider.commons.models.Currency;
 import com.alodiga.services.provider.commons.models.Enterprise;
+import com.alodiga.services.provider.commons.models.EnterCalibration;
 import com.alodiga.services.provider.commons.models.Language;
+import com.alodiga.services.provider.commons.models.Model;
 import com.alodiga.services.provider.commons.models.Period;
 import com.alodiga.services.provider.commons.models.Provider;
 import com.alodiga.services.provider.commons.models.State;
@@ -102,6 +106,13 @@ public interface UtilsEJB extends SPGenericEJB {
     
     public List<Provider> getProvider() throws EmptyListException, GeneralException, NullParameterException;
 
+    public List<Braund> getBraunds() throws EmptyListException, GeneralException, NullParameterException;
+    
+    public List<Model> getModelsByBraund(Long braundId) throws EmptyListException, GeneralException, NullParameterException;
+    
+    public List<ControlType> getControlTypes() throws EmptyListException, GeneralException, NullParameterException;
+
+    public List<EnterCalibration> getEnterCalibrations() throws EmptyListException, GeneralException, NullParameterException;
  
     
   }

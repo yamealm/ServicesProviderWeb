@@ -164,4 +164,9 @@ public class QueryConstants {
     public static final String STATUS_ACCOUNT_ENABLED= "1";
     public static final String ACCOUNT_HAS_PRODUCT = "accountHasProduct";
     public static final String PARAM_WORK_ORDER= "workOrder";
+    public static final String MODEL_BY_BRAUND = "modelByBraund";
+    public static final String PARAM_BRAUND_ID = "braundId";
+    public static final String PARAM_MODEL_ID = "modelId";
+    public static final String PARAM_ENTER_CALIBRATION_ID = "enterCalibrationId";
+    public static final String PARAM_CONTROL_TYPE_ID = "controlTypeId";
 }
