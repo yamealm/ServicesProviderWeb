@@ -76,5 +76,7 @@ public interface TransactionEJB extends SPGenericEJB {
     public MetrologicalControlHistory loadLastMetrologicalControlHistoryByMetrologicalControlId(Long metrologicalControlId)	throws GeneralException, RegisterNotFoundException, NullParameterException;
     
     public List<MetrologicalControl> searchMetrologicalControl(EJBRequest request) throws GeneralException, NullParameterException, EmptyListException;
+    
+    public MetrologicalControl saveMetrologicalControl(MetrologicalControl metrologicalControl) throws GeneralException, NullParameterException ,RegisterNotFoundException;
 }
 

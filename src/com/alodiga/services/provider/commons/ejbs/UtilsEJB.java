@@ -113,6 +113,11 @@ public interface UtilsEJB extends SPGenericEJB {
     public List<ControlType> getControlTypes() throws EmptyListException, GeneralException, NullParameterException;
 
     public List<EnterCalibration> getEnterCalibrations() throws EmptyListException, GeneralException, NullParameterException;
- 
     
+    public Braund saveBraund(Braund braund) throws NullParameterException, GeneralException;
+    
+    public Model saveModel(Model model) throws NullParameterException, GeneralException;
+    
+    public List<Model> getModels() throws EmptyListException, GeneralException, NullParameterException;
+ 
   }

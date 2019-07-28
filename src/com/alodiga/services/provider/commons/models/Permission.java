@@ -138,8 +138,16 @@ public class Permission extends AbstractSPEntity implements Serializable {
     public static Long EDIT_METEOROLOGICAL_CONTROL = 119L;
     public static Long ADD_METEOROLOGICAL_CONTROL = 120L;
     public static Long REMOVE_METEOROLOGICAL_CONTROL = 121L;
-    
-    
+    public static Long LIST_MARKES = 122L;
+    public static Long ADD_MARK	= 123L;
+    public static Long EDIT_MARK = 124L;
+    public static Long VIEW_MARK = 125L;
+    public static Long LIST_MODELS = 126L;
+    public static Long ADD_MODEL = 127L;
+    public static Long EDIT_MODEL = 128L;
+    public static Long VIEW_MODEL = 129L;
+    public static Long DELETE_MARK = 130L;
+    public static Long DELETE_MODEL = 131L;
     
     private static final long serialVersionUID = 1L;
     @Id

@@ -14,7 +14,7 @@ import com.alodiga.services.provider.commons.genericEJB.EJBRequest;
 import com.alodiga.services.provider.commons.genericEJB.SPGenericEJB;
 import com.alodiga.services.provider.commons.models.Braund;
 import com.alodiga.services.provider.commons.models.City;
-import com.alodiga.services.provider.commons.models.ControlType;;
+import com.alodiga.services.provider.commons.models.ControlType;
 import com.alodiga.services.provider.commons.models.Country;
 import com.alodiga.services.provider.commons.models.CountryHasProvider;
 import com.alodiga.services.provider.commons.models.CountryTranslation;
@@ -111,4 +111,10 @@ public List<City> getCitiesByCounty(EJBRequest request) throws EmptyListExceptio
     public List<ControlType> getControlTypes() throws EmptyListException, GeneralException, NullParameterException;
 
     public List<EnterCalibration> getEnterCalibrations() throws EmptyListException, GeneralException, NullParameterException;
+    
+    public Braund saveBraund(Braund braund) throws NullParameterException, GeneralException;
+    
+    public Model saveModel(Model model) throws NullParameterException, GeneralException;
+    
+    public List<Model> getModels() throws EmptyListException, GeneralException, NullParameterException;
   }

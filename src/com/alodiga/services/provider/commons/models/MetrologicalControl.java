@@ -1,6 +1,7 @@
 package com.alodiga.services.provider.commons.models;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,7 +33,7 @@ public class MetrologicalControl extends AbstractSPEntity implements Serializabl
     private Model model;
     private String name;
     private String serie;
-    private String range; 
+    private String rango; 
     private Timestamp creationDate; 
     @ManyToOne
     @JoinColumn(name = "enterCalibrationId")
@@ -88,12 +89,12 @@ public class MetrologicalControl extends AbstractSPEntity implements Serializabl
 		this.serie = serie;
 	}
 
-	public String getRange() {
-		return range;
+	public String getRango() {
+		return rango;
 	}
 
-	public void setRange(String range) {
-		this.range = range;
+	public void setRango(String rango) {
+		this.rango = rango;
 	}
 
 	public Timestamp getCreationDate() {
