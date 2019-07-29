@@ -148,6 +148,11 @@ public class Permission extends AbstractSPEntity implements Serializable {
     public static Long VIEW_MODEL = 129L;
     public static Long DELETE_MARK = 130L;
     public static Long DELETE_MODEL = 131L;
+    public static Long LIST_CALIBRATIONS = 132L;
+    public static Long ADD_CALIBRATION	= 133L;
+    public static Long EDIT_CALIBRATION = 134L;
+    public static Long VIEW_CALIBRATION = 135L;
+    public static Long DELETE_CALIBRATION = 136L;
     
     private static final long serialVersionUID = 1L;
     @Id

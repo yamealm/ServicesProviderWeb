@@ -117,4 +117,6 @@ public List<City> getCitiesByCounty(EJBRequest request) throws EmptyListExceptio
     public Model saveModel(Model model) throws NullParameterException, GeneralException;
     
     public List<Model> getModels() throws EmptyListException, GeneralException, NullParameterException;
+    
+    public EnterCalibration saveEnterCalibration(EnterCalibration enterCalibration) throws NullParameterException, GeneralException;
   }

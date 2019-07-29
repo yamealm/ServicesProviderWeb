@@ -40,9 +40,9 @@ public class MetrologicalControl extends AbstractSPEntity implements Serializabl
     private EnterCalibration enterCalibration;
     private String ubication;
     private String scale; 
-    @ManyToOne
-    @JoinColumn(name = "controlTypeId")
-    private ControlType controlType;
+//    @ManyToOne
+//    @JoinColumn(name = "controlTypeId")
+    private String controlType;
     private boolean enabled;
     
       
@@ -129,19 +129,28 @@ public class MetrologicalControl extends AbstractSPEntity implements Serializabl
 		this.scale = scale;
 	}
 
-	public ControlType getControlType() {
-		return controlType;
-	}
+//	public ControlType getControlType() {
+//		return controlType;
+//	}
+//
+//	public void setControlType(ControlType controlType) {
+//		this.controlType = controlType;
+//	}
 
-	public void setControlType(ControlType controlType) {
-		this.controlType = controlType;
-	}
-
+	
 	
 	public boolean isEnabled() {
 		return enabled;
 	}
 
+
+	public String getControlType() {
+		return controlType;
+	}
+
+	public void setControlType(String controlType) {
+		this.controlType = controlType;
+	}
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
