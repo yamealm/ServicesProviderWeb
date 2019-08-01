@@ -36,7 +36,7 @@ public interface CustomerEJB extends SPGenericEJB {
 
     public Address saveAddress(Address address) throws NullParameterException, GeneralException;
 
-    public List<Customer> searchCustomers(Long enterpriseId, String login, String fullName, String email) throws EmptyListException, NullParameterException, GeneralException;
+    public List<Customer> searchCustomers(String login, String fullName, String email) throws EmptyListException, NullParameterException, GeneralException;
 
    
 }
