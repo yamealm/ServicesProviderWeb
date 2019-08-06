@@ -45,7 +45,12 @@ public class SendMail {
 
             // Propiedades de la conexión
             Properties props = new Properties();
-            props.setProperty("mail.smtp.host", ServiceConstans.SMTP_SERVER);
+//            props.setProperty("mail.smtp.host", ServiceConstans.SMTP_SERVER);
+            props.setProperty("mail.smtp.host", "smtp.gmail.com");
+            props.setProperty("mail.smtp.starttls.enable", "true");
+            props.setProperty("mail.smtp.port", "587");
+            props.setProperty("mail.smtp.user", "yamealm@gmail.com");
+            props.setProperty("mail.smtp.auth", "true");
 
             // Preparamos la sesion
             Session session = Session.getInstance(props, null);
@@ -108,8 +113,12 @@ public class SendMail {
 
             // Lo enviamos.
             Transport t = session.getTransport("smtp");
-            t.connect();
+            t.connect("yamealm@gmail.com", "C4m1l4--");
             t.sendMessage(message, message.getAllRecipients());
+
+//            Transport t = session.getTransport("smtp");
+//            t.connect();
+//            t.sendMessage(message, message.getAllRecipients());
 
             // Cierre.
             t.close();

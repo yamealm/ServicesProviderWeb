@@ -22,10 +22,8 @@ import javax.persistence.FetchType;
 public class Enterprise extends AbstractSPEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    public static final Long ALODIGA_USA = 1L;
-    public static final Long ALODIGA_VENEZUELA = 2L;
-    public static final Long ALODIGA_COLOMBIA = 3L;
-    public static final Long ALODIGA_PANAMA = 4L;
+    public static final Long TURBINES = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -55,6 +55,7 @@ public class ProductSerie extends AbstractSPEntity implements Serializable {
     private String orderWord;
     private String quarantineReason;
     private String work;
+    private String observation;
 
     public ProductSerie() {
     }
@@ -207,6 +208,15 @@ public class ProductSerie extends AbstractSPEntity implements Serializable {
 
 	public void setWork(String work) {
 		this.work = work;
+	}
+	
+
+	public String getObservation() {
+		return observation;
+	}
+
+	public void setObservation(String observation) {
+		this.observation = observation;
 	}
 
 	@Override
