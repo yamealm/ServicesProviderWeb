@@ -11,6 +11,7 @@ import com.alodiga.services.provider.commons.exceptions.RegisterNotFoundExceptio
 import com.alodiga.services.provider.commons.genericEJB.EJBRequest;
 import com.alodiga.services.provider.commons.genericEJB.SPGenericEJB;
 import com.alodiga.services.provider.commons.models.Category;
+import com.alodiga.services.provider.commons.models.MetrologicalControlHistory;
 import com.alodiga.services.provider.commons.models.Product;
 import com.alodiga.services.provider.commons.models.ProductSerie;
 import com.alodiga.services.provider.commons.models.Provider;
@@ -57,5 +58,5 @@ public interface ProductEJBLocal extends SPGenericEJB {
     
     public List<ProductSerie> getProductDefeatedCure(int dayEnding) throws GeneralException, NullParameterException, EmptyListException;
 
-   
+    public List<MetrologicalControlHistory> searchMetrologicalControl(EJBRequest request) throws GeneralException, NullParameterException, EmptyListException;
 }
