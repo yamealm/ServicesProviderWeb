@@ -56,6 +56,8 @@ public class Transaction extends AbstractSPEntity implements Serializable {
     private String invoice;
     private String observation;
     private SerialBlob form;
+    private String extForm;
+    private String nameForm;
     private String orderWord;
     private String quarantineReason;
     private Float amount;
@@ -202,7 +204,6 @@ public class Transaction extends AbstractSPEntity implements Serializable {
 		this.amount = amount;
 	}
 	
-	
 
 	public String getWork() {
 		return work;
@@ -210,6 +211,22 @@ public class Transaction extends AbstractSPEntity implements Serializable {
 
 	public void setWork(String work) {
 		this.work = work;
+	}
+
+	public String getExtensionForm() {
+		return extForm;
+	}
+
+	public void setExtForm(String extForm) {
+		this.extForm = extForm;
+	}
+
+	public String getNameForm() {
+		return nameForm;
+	}
+
+	public void setNameForm(String nameForm) {
+		this.nameForm = nameForm;
 	}
 
 	@Override
