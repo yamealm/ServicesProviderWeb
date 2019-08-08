@@ -13,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.sql.rowset.serial.SerialBlob;
+
 import com.alodiga.services.provider.commons.exceptions.TableNotFoundException;
 import com.alodiga.services.provider.commons.genericEJB.AbstractSPEntity;
 import com.alodiga.services.provider.commons.genericEJB.SPEntityListerner;
@@ -53,7 +55,7 @@ public class Transaction extends AbstractSPEntity implements Serializable {
     private int quantity;
     private String invoice;
     private String observation;
-    private Blob form;
+    private SerialBlob form;
     private String orderWord;
     private String quarantineReason;
     private Float amount;
@@ -144,11 +146,11 @@ public class Transaction extends AbstractSPEntity implements Serializable {
 		this.invoice = invoice;
 	}
 
-	public Blob getForm() {
+	public SerialBlob getForm() {
 		return form;
 	}
 
-	public void setForm(Blob form) {
+	public void setForm(SerialBlob form) {
 		this.form = form;
 	}
 
