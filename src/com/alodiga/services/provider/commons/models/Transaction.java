@@ -4,6 +4,8 @@ package com.alodiga.services.provider.commons.models;
 import java.io.Serializable;
 import java.sql.Blob;
 import java.sql.Timestamp;
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -12,14 +14,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.sql.rowset.serial.SerialBlob;
 
 import com.alodiga.services.provider.commons.exceptions.TableNotFoundException;
 import com.alodiga.services.provider.commons.genericEJB.AbstractSPEntity;
 import com.alodiga.services.provider.commons.genericEJB.SPEntityListerner;
-import java.util.List;
-import javax.persistence.OneToMany;
 
 @Entity
 @EntityListeners(SPEntityListerner.class)
@@ -55,7 +55,7 @@ public class Transaction extends AbstractSPEntity implements Serializable {
     private int quantity;
     private String invoice;
     private String observation;
-    private SerialBlob form;
+    private byte[] form;
     private String extForm;
     private String nameForm;
     private String orderWord;
@@ -148,12 +148,18 @@ public class Transaction extends AbstractSPEntity implements Serializable {
 		this.invoice = invoice;
 	}
 
-	public SerialBlob getForm() {
+	
+
+	public byte[] getForm() {
 		return form;
 	}
 
-	public void setForm(SerialBlob form) {
+	public void setForm(byte[] form) {
 		this.form = form;
+	}
+
+	public String getExtForm() {
+		return extForm;
 	}
 
 	public String getOrderWord() {
