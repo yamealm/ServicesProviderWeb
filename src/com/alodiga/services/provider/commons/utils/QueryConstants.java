@@ -169,4 +169,6 @@ public class QueryConstants {
     public static final String PARAM_MODEL_ID = "modelId";
     public static final String PARAM_ENTER_CALIBRATION_ID = "enterCalibrationId";
     public static final String PARAM_CONTROL_TYPE_ID = "controlTypeId";
+    public static final String PARAM_FILTER = "filter";
+    public static final String PARAM_FILTER_TEXT = "_filterText";
 }
