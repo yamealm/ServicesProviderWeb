@@ -171,4 +171,6 @@ public class QueryConstants {
     public static final String PARAM_CONTROL_TYPE_ID = "controlTypeId";
     public static final String PARAM_FILTER = "filter";
     public static final String PARAM_FILTER_TEXT = "_filterText";
+    public static final String PARAM_DESIGNATION = "designation";
+    public static final String PARAM_INSTRUMENT = "instrument";
 }

@@ -25,6 +25,8 @@ public class MetrologicalControl extends AbstractSPEntity implements Serializabl
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String designation;
+    private String instrument;
     @ManyToOne
     @JoinColumn(name = "braundId")
     private Braund braund;
@@ -128,17 +130,24 @@ public class MetrologicalControl extends AbstractSPEntity implements Serializabl
 	public void setScale(String scale) {
 		this.scale = scale;
 	}
-
-//	public ControlType getControlType() {
-//		return controlType;
-//	}
-//
-//	public void setControlType(ControlType controlType) {
-//		this.controlType = controlType;
-//	}
-
 	
-	
+
+	public String getDesignation() {
+		return designation;
+	}
+
+	public void setDesignation(String designation) {
+		this.designation = designation;
+	}
+
+	public String getInstrument() {
+		return instrument;
+	}
+
+	public void setInstrument(String instrument) {
+		this.instrument = instrument;
+	}
+
 	public boolean isEnabled() {
 		return enabled;
 	}

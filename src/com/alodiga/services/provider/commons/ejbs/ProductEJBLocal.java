@@ -61,4 +61,6 @@ public interface ProductEJBLocal extends SPGenericEJB {
     public List<MetrologicalControlHistory> searchMetrologicalControl(EJBRequest request) throws GeneralException, NullParameterException, EmptyListException;
     
     public List<Product> getProductsByParams(EJBRequest request) throws GeneralException, EmptyListException, NullParameterException;
+    
+    public List<MetrologicalControlHistory> getMetrologicalControlDefeated(int dayEnding) throws GeneralException, NullParameterException, EmptyListException;
 }
