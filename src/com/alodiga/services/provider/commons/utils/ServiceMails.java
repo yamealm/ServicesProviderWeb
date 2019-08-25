@@ -153,14 +153,14 @@ public class ServiceMails {
     public static Mail getQuarantineDataMail(Enterprise enterprise, List<ProductSerie> series , String processName) throws GeneralException {
 
         String hello = "Hola";
-        String subject = "CG Tubines SRL: Productos Pendiente por vencer.";
+        String subject = "CG Tubines SRL: Productos que ingresaron a Cuarentena.";
         String text1 = "Hay registros requeridos para culminar el proceso de actualizaci&oacute;n.";
         String text2 = "Registros a incorporar:";
         String process = "Proceso de Actualizaci&oacute;n";
         String executed = "Ejecutado al:";
         String moreInfo = "Para mayor informaci&oacute;n visiste";
-        String mailInvite = "Le invitamos a seguir disfrutando los beneficios y de los atractivos productos y servicios que le ofrece Alodiga.";
-        String thanks = "Gracias por preferirnos, Alodiga Mejora tu vida";
+//        String mailInvite = "Le invitamos a seguir disfrutando los beneficios y de los atractivos productos y servicios que le ofrece Alodiga.";
+//        String thanks = "Gracias por preferirnos, Alodiga Mejora tu vida";
         String messageFooter1 = "Este mensaje ha sido enviado desde una cuenta de correo electr&oacute;nico exclusivamente de notificaciones que no admite mensajes. No responda esta comunicaci&oacute;n.";
         String allRights = "Todos los derechos reservados";
         String style1 = "style='font:13px/0.6em Arial,Helvetica,sans-serif,lighter; color: #666; font-size:13px;'";
@@ -256,12 +256,13 @@ public class ServiceMails {
                 + "</th>"
                 + "</tr>"
                 + "<tr>"
-                + "<th height='31' bordercolor='#999999'><div align='center'><p align='center' style='font: 10px/1.8em Arial,Helvetica,sans-serif,lighter ; color: #666; display: table;  margin: 0; padding:0;' >"
-                + mailInvite
-                + "</p>"
-                + " <p align='center' style='font: 10px/1.8em Arial,Helvetica,sans-serif,lighter ; color: #666; display: table;  margin: 0; padding:0;'>"
-                + thanks
-                + "</p>"
+                + "<th height='31' bordercolor='#999999'><div align='center'>"
+//                + "<p align='center' style='font: 10px/1.8em Arial,Helvetica,sans-serif,lighter ; color: #666; display: table;  margin: 0; padding:0;' >"
+//                + mailInvite
+//                + "</p>"
+//                + " <p align='center' style='font: 10px/1.8em Arial,Helvetica,sans-serif,lighter ; color: #666; display: table;  margin: 0; padding:0;'>"
+//                + thanks
+//                + "</p>"
                 + " <p align='center' style='font: 10px/1.8em Arial,Helvetica,sans-serif,lighter ; color: #666; display: table;  margin: 0; padding:0;'>"
                 + messageFooter1
                 + "</p>"

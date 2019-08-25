@@ -40,6 +40,7 @@ public class ProductSerie extends AbstractSPEntity implements Serializable {
     private Timestamp endingDate; 
     private Float amount;
     private int quantity;
+    private int quantityInto;
     private String serie;
     private Timestamp cure;
     private Timestamp expirationDate; 
@@ -217,6 +218,15 @@ public class ProductSerie extends AbstractSPEntity implements Serializable {
 
 	public void setObservation(String observation) {
 		this.observation = observation;
+	}
+	
+
+	public int getQuantityInto() {
+		return quantityInto;
+	}
+
+	public void setQuantityInto(int quantityInto) {
+		this.quantityInto = quantityInto;
 	}
 
 	@Override
