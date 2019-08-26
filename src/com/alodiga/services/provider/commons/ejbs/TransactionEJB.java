@@ -80,5 +80,7 @@ public interface TransactionEJB extends SPGenericEJB {
     public MetrologicalControl saveMetrologicalControl(MetrologicalControl metrologicalControl) throws GeneralException, NullParameterException ,RegisterNotFoundException;
     
     public void runAutomaticProcess()throws GeneralException;
+    
+    public List<MetrologicalControl> searchMetrologicalControl() throws GeneralException,  EmptyListException;
 }
 

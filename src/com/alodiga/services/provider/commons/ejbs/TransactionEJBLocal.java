@@ -78,5 +78,7 @@ public interface TransactionEJBLocal extends SPGenericEJB {
     public List<MetrologicalControl> searchMetrologicalControl(EJBRequest request) throws GeneralException, NullParameterException, EmptyListException;
     
     public void runAutomaticProcess()throws GeneralException;
+    
+    public List<MetrologicalControl> searchMetrologicalControl() throws GeneralException,  EmptyListException;
 }
 
