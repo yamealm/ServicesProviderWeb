@@ -56,7 +56,11 @@ public class ProductSerie extends AbstractSPEntity implements Serializable {
     private String orderWord;
     private String quarantineReason;
     private String work;
-    private String observation;
+    private String observation;   
+    @ManyToOne(cascade = {CascadeType.REFRESH})
+    @JoinColumn(name = "quarantineStatusId")
+    private QuarantineStatus quarantineStatus;
+    
 
     public ProductSerie() {
     }
@@ -227,6 +231,15 @@ public class ProductSerie extends AbstractSPEntity implements Serializable {
 
 	public void setQuantityInto(int quantityInto) {
 		this.quantityInto = quantityInto;
+	}
+
+	
+	public QuarantineStatus getQuarantineStatus() {
+		return quarantineStatus;
+	}
+
+	public void setQuarantineStatus(QuarantineStatus quarantineStatus) {
+		this.quarantineStatus = quarantineStatus;
 	}
 
 	@Override

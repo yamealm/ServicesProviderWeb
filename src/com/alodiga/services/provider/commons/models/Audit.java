@@ -5,10 +5,14 @@ import java.io.Serializable;
 import javax.persistence.*;
 import com.alodiga.services.provider.commons.genericEJB.AbstractSPEntity;
 import java.sql.Timestamp;
+import com.alodiga.services.provider.commons.utils.QueryConstants;
 
 @Entity
 @Table(name = "audit")
-
+@NamedQueries({
+    @NamedQuery(name = QueryConstants.LOAD_LAST_AUDITS,
+    query = "SELECT a FROM Audit a order by id desc limit 1000")
+})
 public class Audit extends AbstractSPEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;

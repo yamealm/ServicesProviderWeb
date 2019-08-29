@@ -25,6 +25,7 @@ import com.alodiga.services.provider.commons.models.Enterprise;
 import com.alodiga.services.provider.commons.models.Language;
 import com.alodiga.services.provider.commons.models.Model; 
 import com.alodiga.services.provider.commons.models.Provider;
+import com.alodiga.services.provider.commons.models.QuarantineStatus;
 import com.alodiga.services.provider.commons.models.State;
 import com.alodiga.services.provider.commons.models.TinType;
 import com.alodiga.services.provider.commons.utils.Mail;
@@ -119,4 +120,6 @@ public List<City> getCitiesByCounty(EJBRequest request) throws EmptyListExceptio
     public List<Model> getModels() throws EmptyListException, GeneralException, NullParameterException;
     
     public EnterCalibration saveEnterCalibration(EnterCalibration enterCalibration) throws NullParameterException, GeneralException;
+    
+    public List<QuarantineStatus> getQuaratineStatus() throws EmptyListException, GeneralException, NullParameterException;
   }
