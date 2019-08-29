@@ -49,7 +49,7 @@ public class QueryConstants {
     public static final String LOAD_ACCOUNT_BY_ENTERPRISE = "loadAccountByEnterprise";
     public static final String LOAD_CUSTOMER_BY_LOGIN = "loadCustomerByLogin";
     public static final String LOAD_CUSTOMER_BY_EMAIL = "loadCustomerByEmail";
-    //public static final String LOAD_LAST_AUDITS = "loadLastFiftyAudit";
+    public static final String LOAD_LAST_AUDITS = "loadLastFiftyAudit";
     public static final String DELETE_REPORT_PARAMETER = "deleteReportParameter";
     public static final String DELETE_REPORT_PROFILE = "deleteReportProfile";
     public static final String PREFERENCE_VALUE_BY_PREFERENCE_FIELD = "preferenceValueByPreferenceField";
