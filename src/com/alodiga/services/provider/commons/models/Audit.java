@@ -11,7 +11,7 @@ import com.alodiga.services.provider.commons.utils.QueryConstants;
 @Table(name = "audit")
 @NamedQueries({
     @NamedQuery(name = QueryConstants.LOAD_LAST_AUDITS,
-    query = "SELECT a FROM Audit a order by id desc limit 1000")
+    query = "SELECT a FROM Audit a order by a.id desc")
 })
 public class Audit extends AbstractSPEntity implements Serializable {
 
