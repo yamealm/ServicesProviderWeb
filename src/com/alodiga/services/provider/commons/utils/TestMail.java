@@ -22,6 +22,9 @@ public class TestMail {
 		
 		List<ProductSerie> series = new ArrayList<ProductSerie>();
 		List<ProductSerie> quarantines = new ArrayList<ProductSerie>();
+		Enterprise enterprise = new Enterprise();
+		enterprise.setInfoEmail("yalmea@alodiga.us");
+		for(int i=0; i<5; i++) {
 		ProductSerie productSerie = new ProductSerie();
 		productSerie.setId(1L);
 		productSerie.setAmount(10f);
@@ -53,8 +56,8 @@ public class TestMail {
 		productSerie.setProvider(provider);
 		productSerie.setSerie("454HY");
 		productSerie.setQuarantineReason("Fecha de vencimiento expirada");
-		Enterprise enterprise = new Enterprise();
-		enterprise.setInfoEmail("yalmea@alodiga.us");
+		quarantines.add(productSerie);
+		}
 		try {
 			ServiceMailDispatcher.sendQuarantineDataMail(enterprise, quarantines, "Cuarentena");
 		} catch (GeneralException e) {

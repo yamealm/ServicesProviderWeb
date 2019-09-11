@@ -5,6 +5,7 @@ import com.alodiga.services.provider.commons.models.ProductSerie;
 import com.alodiga.services.provider.commons.models.User;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +30,7 @@ public class ServiceMails {
         String messageFooter1 = "Este mensaje ha sido enviado desde una cuenta de correo electr&oacute;nico exclusivamente de notificaciones que no admite mensajes. No responda esta comunicaci&oacute;n.";
         String allRights = "Todos los derechos reservados";
         String style1 = "style='font:13px/0.6em Arial,Helvetica,sans-serif,lighter; color: #666; font-size:13px;'";
-        String style2 = "style='background-color: #555555;color:#7CBF4F;font:12px/1.8em Arial,Helvetica,sans-serif,lighter;font-weight:bold;padding-left:10px'";
+        String style2 = "style='background-color: #555555;color:#ffffff;font:12px/1.8em Arial,Helvetica,sans-serif,lighter;font-weight:bold;padding-left:10px'";
 
         String body = "";
         body = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>";
@@ -156,17 +157,17 @@ public class ServiceMails {
 
         String hello = "Hola";
         String subject = "CG Tubines SRL: Productos que ingresaron a Cuarentena.";
-        String text1 = "Hay registros requeridos para culminar el proceso de actualizaci&oacute;n.";
-        String text2 = "Registros a incorporar:";
+        String text1 = "Existen productos que entraron a cuarentena de manera autom&aacute;tica.";
+        String text2 = "Productos que ingresaron:";
         String process = "Proceso de Actualizaci&oacute;n";
         String executed = "Ejecutado al:";
-        String moreInfo = "Para mayor informaci&oacute;n visiste";
+//        String moreInfo = "Para mayor informaci&oacute;n visiste";
 //        String mailInvite = "Le invitamos a seguir disfrutando los beneficios y de los atractivos productos y servicios que le ofrece Alodiga.";
 //        String thanks = "Gracias por preferirnos, Alodiga Mejora tu vida";
         String messageFooter1 = "Este mensaje ha sido enviado desde una cuenta de correo electr&oacute;nico exclusivamente de notificaciones que no admite mensajes. No responda esta comunicaci&oacute;n.";
         String allRights = "Todos los derechos reservados";
         String style1 = "style='font:13px/0.6em Arial,Helvetica,sans-serif,lighter; color: #666; font-size:13px;'";
-        String style2 = "style='background-color: #555555;color:#7CBF4F;font:12px/1.8em Arial,Helvetica,sans-serif,lighter;font-weight:bold;padding-left:10px'";
+        String style2 = "style='background-color: #555555;color:#ffffff;font:12px/1.8em Arial,Helvetica,sans-serif,lighter;font-weight:bold;padding-left:10px'";
 
         String body = "";
         body = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>";
@@ -178,7 +179,7 @@ public class ServiceMails {
                 + "<img src='http://sales.alodiga.com/images/img-alodiga-logo.png' align='left' width='114' height='90' longdesc='Logo alodiga' />"
                 + "</p><p>&nbsp;</p>" + "<p>&nbsp;</p>"
                 + "<table  width='730' border='0' >"
-                + "<tr><th width='728' height='20' align='right' bgcolor='#80C454' style='color:#242424;font:12px/1.8em Arial,Helvetica,sans-serif,lighter;'>" + text1 + "</th></tr>"
+                + "<tr><th width='728' height='20' align='right' bgcolor='#0095cd' style='color:#242424;font:12px/1.8em Arial,Helvetica,sans-serif,lighter;'></th></tr>"
                 + "<tr><th width='728' height='5' bgcolor='#232323'></th></tr>"
                 + "</table>"
                 + "<table width='728' border='0'>"
@@ -234,12 +235,17 @@ public class ServiceMails {
                     + "</tr>";
 
             for (ProductSerie productSerie : series) {
+            	String date = null;
+            	if (productSerie.getExpirationDate() != null) {
+            		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+            		date = df.format(new Timestamp((new java.util.Date().getTime())));
+            	}
                 body += "<tr height='20px'>"
                         + "<td " + style1 + ">" + productSerie.getProduct().getPartNumber() + "</td>"
                         + "<td " + style1 + ">" + productSerie.getProduct().getDescription() + "</td>"
                         + "<td " + style1 + ">" + productSerie.getCategory().getName() + "</td>"
                         + "<td " + style1 + ">" + productSerie.getSerie() + "</td>"
-                        + "<td " + style1 + ">" + productSerie.getExpirationDate() + "</td>"
+                        + "<td " + style1 + ">" + date + "</td>"
                         + "<td " + style1 + ">" + productSerie.getProduct().getUbicationBox() + "</td>"
                         + "<td " + style1 + ">" + productSerie.getProduct().getUbicationFolder() + "</td>"
                        	+ "<td " + style1 + ">" + productSerie.getQuarantineReason() + "</td>"
@@ -251,11 +257,11 @@ public class ServiceMails {
 
         body += "<tr height='3px'><th width='728' bgcolor='#232323'></th></tr>"
                 + "<tr height='40px'>"
-                + "<th height='40px'><div class='Estilo11' align='left'>"
-                + moreInfo
-                + "<span style='font-size: 13px'> "
-                + "<a href='http://sales.alodiga.com/'>  sales.alodiga.com</a></span></div>"
-                + "</th>"
+//                + "<th height='40px'><div class='Estilo11' align='left'>"
+//                + moreInfo
+//                + "<span style='font-size: 13px'> "
+//                + "<a href='http://sales.alodiga.com/'>  sales.alodiga.com</a></span></div>"
+//                + "</th>"
                 + "</tr>"
                 + "<tr>"
                 + "<th height='31' bordercolor='#999999'><div align='center'>"
@@ -273,7 +279,7 @@ public class ServiceMails {
                 + "</tr>"
                 + " </table>"
                 + "<div align='center'>"
-                + "<p align='center' style='font: 10px/1.8em Arial,Helvetica,sans-serif,lighter ; color: #666; display: table;  margin: 0; padding:0;'>&copy; Copyright 2013 - Alodiga, C.A. " + allRights + "<br> "
+                + "<p align='center' style='font: 10px/1.8em Arial,Helvetica,sans-serif,lighter ; color: #666; display: table;  margin: 0; padding:0;'>&copy; Copyright 2013 - CG TURBINES SRL " + allRights + "<br> "
                 + "</div></th></tr>"
                 + "</table></div></body></html>";
 
@@ -377,7 +383,7 @@ public class ServiceMails {
                 + "</tr>"
                 + " </table>"
                 + "<div align='center'>"
-                + "<p align='center' style='font: 10px/1.8em Arial,Helvetica,sans-serif,lighter ; color: #666; display: table;  margin: 0; padding:0;'>&copy; Copyright 2013 - Alodiga, C.A. " + allRights
+                + "<p align='center' style='font: 10px/1.8em Arial,Helvetica,sans-serif,lighter ; color: #666; display: table;  margin: 0; padding:0;'>&copy; Copyright 2013 - CG Turbines SRL. " + allRights
                 + "<br> </div></th></tr>"
                 + "</table></div></body></html>";
 
