@@ -24,7 +24,6 @@ import com.alodiga.services.provider.commons.models.Enterprise;
 import com.alodiga.services.provider.commons.models.EnterCalibration;
 import com.alodiga.services.provider.commons.models.Language;
 import com.alodiga.services.provider.commons.models.Model;
-import com.alodiga.services.provider.commons.models.Period;
 import com.alodiga.services.provider.commons.models.Provider;
 import com.alodiga.services.provider.commons.models.QuarantineStatus;
 import com.alodiga.services.provider.commons.models.State;

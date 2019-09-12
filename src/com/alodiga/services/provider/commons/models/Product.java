@@ -1,6 +1,7 @@
 package com.alodiga.services.provider.commons.models;
 
 import java.io.Serializable;
+import java.lang.reflect.Field;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -204,5 +205,32 @@ public class Product extends AbstractSPEntity implements Serializable {
         }
     }
 
+    public String getNaturalField(Object o,Object o2){
+        StringBuilder sb = new StringBuilder();
+        Class<?> thisClass = o.getClass();
+        Class<?> thisClass2 = o2.getClass();
+        try {
+            Field[] aClassFields = thisClass.getDeclaredFields();
+            Field[] aClassFields2 = thisClass2.getDeclaredFields();
+            sb.append("[");
+            for(Field f : aClassFields){
+                for(Field f2 : aClassFields2){
+                  if(f.get(o) !=  f.get(o2)){
+                       sb.append(f.getName()).append("=");
+    //                   sb.append(f.get(o)).append("|");
+                       sb.append(f.get(o2)).append(",");
+                       break;
+                  }
+                }
+            }  sb.append("]");
+        } catch (SecurityException e) {
+            e.printStackTrace();
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        return sb.toString();
+    }
 
 }

@@ -4,10 +4,14 @@ import com.alodiga.services.provider.commons.models.Enterprise;
 import com.alodiga.services.provider.commons.models.ProductSerie;
 import com.alodiga.services.provider.commons.models.User;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 
 
@@ -31,7 +35,15 @@ public class ServiceMails {
         String allRights = "Todos los derechos reservados";
         String style1 = "style='font:13px/0.6em Arial,Helvetica,sans-serif,lighter; color: #666; font-size:13px;'";
         String style2 = "style='background-color: #555555;color:#ffffff;font:12px/1.8em Arial,Helvetica,sans-serif,lighter;font-weight:bold;padding-left:10px'";
-
+        Properties propiedades = new Properties();
+        try {
+     			propiedades.load(new FileInputStream("C:\\Users\\yamea\\eclipse-workspace\\ServicesProviderCommons\\src\\properties\\prop.properties"));
+     		} catch (FileNotFoundException e) {
+     			e.printStackTrace();
+     		} catch (IOException e) {
+     			e.printStackTrace();
+     		}
+        String imagen = propiedades.getProperty("prop.logo");
         String body = "";
         body = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>";
         body += "<html xmlns='http://www.w3.org/1999/xhtml'>";
@@ -39,7 +51,7 @@ public class ServiceMails {
         body += "<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/><style type='text/css'>.Estilo11 {font:13px/0.6em Arial,Helvetica,sans-serif,lighter; color: #333333; font-size:13px; font-weight:bold;}</style><style type='text/css'>.Estilo12 {font:13px/0.6em Arial,Helvetica,sans-serif,lighter; color: #666; font-size:13px;}</style><style type='text/css'>.EstiloColumn {background-color: #555555;color:#7CBF4F;font:12px/1.8em Arial,Helvetica,sans-serif,lighter;font-weight:bold;padding-left:10px}</style>" + "<div align='center'>"
                 + "<table width='756' height='600' border='0'>"
                 + "<tr><th width='750' height='595'><p>"
-                + "<img src='http://sales.alodiga.com/images/img-alodiga-logo.png' align='left' width='114' height='90' longdesc='Logo alodiga' />"
+                + "<img src='"+imagen+"' align='left' width='200' height='90' longdesc='Logo CG Turbines' />"
                 + "</p><p>&nbsp;</p>" + "<p>&nbsp;</p>"
                 + "<table  width='730' border='0' >"
                 + "<tr><th width='728' height='20' align='right' bgcolor='#80C454' style='color:#242424;font:12px/1.8em Arial,Helvetica,sans-serif,lighter;'>" + text1 + "</th></tr>"
@@ -165,7 +177,15 @@ public class ServiceMails {
         String allRights = "Todos los derechos reservados";
         String style1 = "style='font:13px/0.6em Arial,Helvetica,sans-serif,lighter; color: #666; font-size:13px;'";
         String style2 = "style='background-color: #555555;color:#ffffff;font:12px/1.8em Arial,Helvetica,sans-serif,lighter;font-weight:bold;padding-left:10px'";
-
+        Properties propiedades = new Properties();
+        try {
+     			propiedades.load(new FileInputStream("C:\\Users\\yamea\\eclipse-workspace\\ServicesProviderCommons\\src\\properties\\prop.properties"));
+     		} catch (FileNotFoundException e) {
+     			e.printStackTrace();
+     		} catch (IOException e) {
+     			e.printStackTrace();
+     		}
+        String imagen = propiedades.getProperty("prop.logo");
         String body = "";
         body = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>";
         body += "<html xmlns='http://www.w3.org/1999/xhtml'>";
@@ -173,7 +193,7 @@ public class ServiceMails {
         body += "<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/><style type='text/css'>.Estilo11 {font:13px/0.6em Arial,Helvetica,sans-serif,lighter; color: #333333; font-size:13px; font-weight:bold;}</style><style type='text/css'>.Estilo12 {font:13px/0.6em Arial,Helvetica,sans-serif,lighter; color: #666; font-size:13px;}</style><style type='text/css'>.EstiloColumn {background-color: #555555;color:#7CBF4F;font:12px/1.8em Arial,Helvetica,sans-serif,lighter;font-weight:bold;padding-left:10px}</style>" + "<div align='center'>"
                 + "<table width='1056' height='600' border='0'>"
                 + "<tr><th width='1050' height='595'><p>"
-                + "<img src='http://sales.alodiga.com/images/img-alodiga-logo.png' align='left' width='114' height='90' longdesc='Logo alodiga' />"
+                + "<img src='"+imagen+"' align='left' width='200' height='90' longdesc='Logo CG Turbines' />"
                 + "</p><p>&nbsp;</p>" + "<p>&nbsp;</p>"
                 + "<table  width='1030' border='0' >"
                 + "<tr><th width='1028' height='20' align='right' bgcolor='#0095cd' style='color:#242424;font:12px/1.8em Arial,Helvetica,sans-serif,lighter;'></th></tr>"
@@ -265,7 +285,7 @@ public class ServiceMails {
                 + "</tr>"
                 + " </table>"
                 + "<div align='center'>"
-                + "<p align='center' style='font: 10px/1.8em Arial,Helvetica,sans-serif,lighter ; color: #666; display: table;  margin: 0; padding:0;'>&copy; Copyright 2019 - CG TURBINES SRL " + allRights + "<br> "
+                + "<p align='center' style='font: 10px/1.8em Arial,Helvetica,sans-serif,lighter ; color: #666; display: table;  margin: 0; padding:0;'>&copy; Copyright 2019 - CG Turbines SRL " + allRights + "<br> "
                 + "</div></th></tr>"
                 + "</table></div></body></html>";
 
@@ -296,7 +316,15 @@ public class ServiceMails {
         String pass = "Nueva Clave: ";
         String messageFooter1 = "Este mensaje ha sido enviado desde una cuenta de correo electr&oacute;nico exclusivamente de notificaciones que no admite mensajes. No responda esta comunicaci&oacute;n.";
         String allRights = "Todos los derechos reservados";
-
+        Properties propiedades = new Properties();
+        try {
+     			propiedades.load(new FileInputStream("C:\\Users\\yamea\\eclipse-workspace\\ServicesProviderCommons\\src\\properties\\prop.properties"));
+     		} catch (FileNotFoundException e) {
+     			e.printStackTrace();
+     		} catch (IOException e) {
+     			e.printStackTrace();
+     		}
+        String imagen = propiedades.getProperty("prop.logo");
         String style1 = "style='font:13px/0.6em Arial,Helvetica,sans-serif,lighter; color: #666; font-size:13px;'";
         String style2 = "style='background-color: #555555;color:#ffffff;font:12px/1.8em Arial,Helvetica,sans-serif,lighter;font-weight:bold;padding-left:10px'";
         String body = "";
@@ -306,7 +334,7 @@ public class ServiceMails {
         body += "<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/><style type='text/css'>.Estilo11 {font:13px/0.6em Arial,Helvetica,sans-serif,lighter; color: #333333; font-size:13px; font-weight:bold;}</style><style type='text/css'>.Estilo12 {font:13px/0.6em Arial,Helvetica,sans-serif,lighter; color: #666; font-size:13px;}</style><style type='text/css'>.EstiloColumn {background-color: #555555;color:#7CBF4F;font:12px/1.8em Arial,Helvetica,sans-serif,lighter;font-weight:bold;padding-left:10px}</style>" + "<div align='center'>"
                 + "<table width='756' height='600' border='0'>"
                 + "<tr><th width='750' height='595'><p>"
-                + "<img src='http://sales.alodiga.com/images/img-alodiga-logo.png' align='left' width='114' height='90' longdesc='Logo alodiga' />"
+                + "<img src='"+imagen+"' align='left' width='200' height='90' longdesc='Logo CG Turbines' />"
                 + "</p><p>&nbsp;</p>" + "<p>&nbsp;</p>"
                 + "<table  width='730' border='0' >"
                 + "<tr><th width='728' height='20' align='right' bgcolor='#0095cd' style='color:#ffffff;font:14px/1.8em Arial,Helvetica,sans-serif,lighter;'>" + text3 + "</th></tr>"

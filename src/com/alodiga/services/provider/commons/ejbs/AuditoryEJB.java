@@ -36,4 +36,8 @@ public interface AuditoryEJB extends SPGenericEJB {
     public AuditAction saveAuditAction(AuditAction action) throws GeneralException, NullParameterException;
 
     public List<AuditAction> getAuditActionsByUserId(Long userId, Date beginningDate, Date endingDate) throws GeneralException, RegisterNotFoundException, NullParameterException, EmptyListException;
+    
+    public String getNaturalFieldUser(EJBRequest request1, EJBRequest request2) throws NullParameterException, GeneralException;
+    
+    public String getNaturalFieldProfile(EJBRequest request1, EJBRequest request2) throws NullParameterException, GeneralException;
 }

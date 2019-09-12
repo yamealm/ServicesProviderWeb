@@ -25,15 +25,20 @@ public class Audit extends AbstractSPEntity implements Serializable {
     private String newValues;
     @Lob()
     private String originalValues;
-    private Long registerId;
+    
     private String remoteIp;
-    private String responsibleId;
     private String responsibleType;
     private String tableName;
     //bi-directional many-to-one association to Event
     @ManyToOne(cascade = CascadeType.REFRESH)
     @JoinColumn(name = "eventId")
     private Event event;
+    @ManyToOne(cascade = CascadeType.REFRESH)
+    @JoinColumn(name = "userId")
+    private User user;
+    @ManyToOne(cascade = CascadeType.REFRESH)
+    @JoinColumn(name = "permissionId")
+    private Permission permission;
 
     public Audit() {
     }
@@ -78,28 +83,12 @@ public class Audit extends AbstractSPEntity implements Serializable {
         this.originalValues = originalValues;
     }
 
-    public Long getRegisterId() {
-        return this.registerId;
-    }
-
-    public void setRegisterId(Long registerId) {
-        this.registerId = registerId;
-    }
-
     public String getRemoteIp() {
         return this.remoteIp;
     }
 
     public void setRemoteIp(String remoteIp) {
         this.remoteIp = remoteIp;
-    }
-
-    public String getResponsibleId() {
-        return this.responsibleId;
-    }
-
-    public void setResponsibleId(String responsibleId) {
-        this.responsibleId = responsibleId;
     }
 
     public String getResponsibleType() {
@@ -109,8 +98,26 @@ public class Audit extends AbstractSPEntity implements Serializable {
     public void setResponsibleType(String responsibleType) {
         this.responsibleType = responsibleType;
     }
+    
+    
 
-    @Override
+    public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Permission getPermission() {
+		return permission;
+	}
+
+	public void setPermission(Permission permission) {
+		this.permission = permission;
+	}
+
+	@Override
     public String getTableName() throws TableNotFoundException {
         return super.getTableName(this.getClass());
     }

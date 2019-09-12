@@ -1,6 +1,7 @@
 package com.alodiga.services.provider.commons.models;
 
 import java.io.Serializable;
+import java.lang.reflect.Field;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -163,4 +164,31 @@ public class Enterprise extends AbstractSPEntity implements Serializable {
         return super.getTableName(this.getClass());
     }
 
+    public String getNaturalField(Object o,Object o2){
+        StringBuilder sb = new StringBuilder();
+        Class<?> thisClass = o.getClass();
+        Class<?> thisClass2 = o2.getClass();
+        try {
+            Field[] aClassFields = thisClass.getDeclaredFields();
+            Field[] aClassFields2 = thisClass2.getDeclaredFields();
+            sb.append("[");
+            for(Field f : aClassFields){
+                for(Field f2 : aClassFields2){
+                  if(f.get(o) !=  f.get(o2)){
+                       sb.append(f.getName()).append("=");
+    //                   sb.append(f.get(o)).append("|");
+                       sb.append(f.get(o2)).append(",");
+                       break;
+                  }
+                }
+            }  sb.append("]");
+        } catch (SecurityException e) {
+            e.printStackTrace();
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        return sb.toString();
+    }
 }
