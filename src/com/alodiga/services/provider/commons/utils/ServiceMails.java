@@ -134,7 +134,7 @@ public class ServiceMails {
                 + "</tr>"
                 + " </table>"
                 + "<div align='center'>"
-                + "<p align='center' style='font: 10px/1.8em Arial,Helvetica,sans-serif,lighter ; color: #666; display: table;  margin: 0; padding:0;'>&copy; Copyright 2013 - Alodiga, C.A. " + allRights + "<br> "
+                + "<p align='center' style='font: 10px/1.8em Arial,Helvetica,sans-serif,lighter ; color: #666; display: table;  margin: 0; padding:0;'>&copy; Copyright 2019 - CG Turbines SRL " + allRights + "<br> "
                 + "</div></th></tr>"
                 + "</table></div></body></html>";
 
@@ -161,9 +161,6 @@ public class ServiceMails {
         String text2 = "Productos que ingresaron:";
         String process = "Proceso de Actualizaci&oacute;n";
         String executed = "Ejecutado al:";
-//        String moreInfo = "Para mayor informaci&oacute;n visiste";
-//        String mailInvite = "Le invitamos a seguir disfrutando los beneficios y de los atractivos productos y servicios que le ofrece Alodiga.";
-//        String thanks = "Gracias por preferirnos, Alodiga Mejora tu vida";
         String messageFooter1 = "Este mensaje ha sido enviado desde una cuenta de correo electr&oacute;nico exclusivamente de notificaciones que no admite mensajes. No responda esta comunicaci&oacute;n.";
         String allRights = "Todos los derechos reservados";
         String style1 = "style='font:13px/0.6em Arial,Helvetica,sans-serif,lighter; color: #666; font-size:13px;'";
@@ -174,16 +171,16 @@ public class ServiceMails {
         body += "<html xmlns='http://www.w3.org/1999/xhtml'>";
         body += "<head>";
         body += "<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/><style type='text/css'>.Estilo11 {font:13px/0.6em Arial,Helvetica,sans-serif,lighter; color: #333333; font-size:13px; font-weight:bold;}</style><style type='text/css'>.Estilo12 {font:13px/0.6em Arial,Helvetica,sans-serif,lighter; color: #666; font-size:13px;}</style><style type='text/css'>.EstiloColumn {background-color: #555555;color:#7CBF4F;font:12px/1.8em Arial,Helvetica,sans-serif,lighter;font-weight:bold;padding-left:10px}</style>" + "<div align='center'>"
-                + "<table width='756' height='600' border='0'>"
-                + "<tr><th width='750' height='595'><p>"
+                + "<table width='1056' height='600' border='0'>"
+                + "<tr><th width='1050' height='595'><p>"
                 + "<img src='http://sales.alodiga.com/images/img-alodiga-logo.png' align='left' width='114' height='90' longdesc='Logo alodiga' />"
                 + "</p><p>&nbsp;</p>" + "<p>&nbsp;</p>"
-                + "<table  width='730' border='0' >"
-                + "<tr><th width='728' height='20' align='right' bgcolor='#0095cd' style='color:#242424;font:12px/1.8em Arial,Helvetica,sans-serif,lighter;'></th></tr>"
-                + "<tr><th width='728' height='5' bgcolor='#232323'></th></tr>"
+                + "<table  width='1030' border='0' >"
+                + "<tr><th width='1028' height='20' align='right' bgcolor='#0095cd' style='color:#242424;font:12px/1.8em Arial,Helvetica,sans-serif,lighter;'></th></tr>"
+                + "<tr><th width='1028' height='5' bgcolor='#232323'></th></tr>"
                 + "</table>"
-                + "<table width='728' border='0'>"
-                + "<tr><th width='728'>"
+                + "<table width='1028' border='0'>"
+                + "<tr><th width='1028'>"
                 + "<p align='left' class='Estilo11'><br/><br/>&iexcl;"
                 + hello + "&nbsp;!<br/><br/>"
                 + text1 + "<br><br></p>"
@@ -193,11 +190,11 @@ public class ServiceMails {
                 + "<th><p align='left' style='font: 16px/1.8em Arial,Helvetica,sans-serif,lighter ; color: #666; font-weight:bold; display: table;  margin: 0; padding:0;' >"
                 + text2
                 + "</p></th></tr>"
-                + "<tr height='3px'><th width='728' bgcolor='#232323'></th></tr>"
+                + "<tr height='3px'><th width='1028' bgcolor='#232323'></th></tr>"
                 + "<tr>"
                 + "<th>"
                 + "<div>"
-                + "<table width='705' border='0' cellpadding='2' cellspancing='0' style='border:inherit'>"
+                + "<table width='1005' border='0' cellpadding='2' cellspancing='0' style='border:inherit'>"
                 + "<tr height='30px'>"
                 + "<td " + style2 + " width='300'>"
                 + "<div align='left'>"
@@ -222,20 +219,20 @@ public class ServiceMails {
                     + "Operadoras M&oacute;viles"
                     + "</p></th></tr>"
                     + "<tr><th><div>"
-                    + "<table width='725' border='0'>"
+                    + "<table width='1025' border='0'>"
                     + "<tr align='center'>"
-                    + "<th width='365' " + style2 + ">Numero de Parte</th>"
-                    + "<th width='360' " + style2 + ">Producto</th>"
-                    + "<th width='365' " + style2 + ">Categoria</th>"
-                    + "<th width='360' " + style2 + ">Numero de Serie</th>"
-                    + "<th width='365' " + style2 + ">Fecha de Expiracion</th>"
-                    + "<th width='360' " + style2 + ">Ubicacion Caja</th>"
-                    + "<th width='360' " + style2 + ">Ubicacion Carpeta</th>"
-                    + "<th width='360' " + style2 + ">Motivo de Caurentena</th>"
+                    + "<th width='385' " + style2 + ">Numero de Parte</th>"
+                    + "<th width='380' " + style2 + ">Producto</th>"
+                    + "<th width='385' " + style2 + ">Categoria</th>"
+                    + "<th width='380' " + style2 + ">Numero de Serie</th>"
+                    + "<th width='385' " + style2 + ">Fecha de Expiracion</th>"
+                    + "<th width='380' " + style2 + ">Ubicacion Caja</th>"
+                    + "<th width='380' " + style2 + ">Ubicacion Carpeta</th>"
+                    + "<th width='740' " + style2 + ">Motivo de Caurentena</th>"
                     + "</tr>";
 
             for (ProductSerie productSerie : series) {
-            	String date = null;
+            	String date = "";
             	if (productSerie.getExpirationDate() != null) {
             		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
             		date = df.format(new Timestamp((new java.util.Date().getTime())));
@@ -257,20 +254,9 @@ public class ServiceMails {
 
         body += "<tr height='3px'><th width='728' bgcolor='#232323'></th></tr>"
                 + "<tr height='40px'>"
-//                + "<th height='40px'><div class='Estilo11' align='left'>"
-//                + moreInfo
-//                + "<span style='font-size: 13px'> "
-//                + "<a href='http://sales.alodiga.com/'>  sales.alodiga.com</a></span></div>"
-//                + "</th>"
                 + "</tr>"
                 + "<tr>"
                 + "<th height='31' bordercolor='#999999'><div align='center'>"
-//                + "<p align='center' style='font: 10px/1.8em Arial,Helvetica,sans-serif,lighter ; color: #666; display: table;  margin: 0; padding:0;' >"
-//                + mailInvite
-//                + "</p>"
-//                + " <p align='center' style='font: 10px/1.8em Arial,Helvetica,sans-serif,lighter ; color: #666; display: table;  margin: 0; padding:0;'>"
-//                + thanks
-//                + "</p>"
                 + " <p align='center' style='font: 10px/1.8em Arial,Helvetica,sans-serif,lighter ; color: #666; display: table;  margin: 0; padding:0;'>"
                 + messageFooter1
                 + "</p>"
@@ -279,7 +265,7 @@ public class ServiceMails {
                 + "</tr>"
                 + " </table>"
                 + "<div align='center'>"
-                + "<p align='center' style='font: 10px/1.8em Arial,Helvetica,sans-serif,lighter ; color: #666; display: table;  margin: 0; padding:0;'>&copy; Copyright 2013 - CG TURBINES SRL " + allRights + "<br> "
+                + "<p align='center' style='font: 10px/1.8em Arial,Helvetica,sans-serif,lighter ; color: #666; display: table;  margin: 0; padding:0;'>&copy; Copyright 2019 - CG TURBINES SRL " + allRights + "<br> "
                 + "</div></th></tr>"
                 + "</table></div></body></html>";
 
@@ -301,21 +287,18 @@ public class ServiceMails {
     public static Mail getUserRecoveryPasswordMail(User user, String newPassword, Enterprise enterprise) throws GeneralException {
 
         String hello = "Hola";
-        String subject = "Alodiga SP: Recuperación de clave.";
+        String subject = "CG Turbines SRL: Recuperación de clave.";
         String text1 = "Nos complace notificarle que su clave de acceso ha sido generada automaticamente.";
         String text2 = "Datos de su cuenta:";
-        String text3 = "Recuperacion de clave.";
+        String text3 = "Recuperacion de clave";
         String distributorName = "Cuenta: ";
         String login = "Usuario(Login): ";
         String pass = "Nueva Clave: ";
-        String moreInfo = "Para acceder al sistema visite:";
-        String mailInvite = "Le invitamos a seguir disfrutando los beneficios y de los atractivos productos y servicios que le ofrece Alodiga.";
-        String thanks = "Gracias por preferirnos, Alodiga Mejora tu vida";
         String messageFooter1 = "Este mensaje ha sido enviado desde una cuenta de correo electr&oacute;nico exclusivamente de notificaciones que no admite mensajes. No responda esta comunicaci&oacute;n.";
         String allRights = "Todos los derechos reservados";
 
         String style1 = "style='font:13px/0.6em Arial,Helvetica,sans-serif,lighter; color: #666; font-size:13px;'";
-        String style2 = "style='background-color: #555555;color:#7CBF4F;font:12px/1.8em Arial,Helvetica,sans-serif,lighter;font-weight:bold;padding-left:10px'";
+        String style2 = "style='background-color: #555555;color:#ffffff;font:12px/1.8em Arial,Helvetica,sans-serif,lighter;font-weight:bold;padding-left:10px'";
         String body = "";
         body = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>";
         body += "<html xmlns='http://www.w3.org/1999/xhtml'>";
@@ -326,7 +309,7 @@ public class ServiceMails {
                 + "<img src='http://sales.alodiga.com/images/img-alodiga-logo.png' align='left' width='114' height='90' longdesc='Logo alodiga' />"
                 + "</p><p>&nbsp;</p>" + "<p>&nbsp;</p>"
                 + "<table  width='730' border='0' >"
-                + "<tr><th width='728' height='20' align='right' bgcolor='#80C454' style='color:#242424;font:12px/1.8em Arial,Helvetica,sans-serif,lighter;'>" + text3 + "</th></tr>"
+                + "<tr><th width='728' height='20' align='right' bgcolor='#0095cd' style='color:#ffffff;font:14px/1.8em Arial,Helvetica,sans-serif,lighter;'>" + text3 + "</th></tr>"
                 + "<tr><th width='728' height='5' bgcolor='#232323'></th></tr>"
                 + "</table>"
                 + "<table width='728' border='0'>"
@@ -361,43 +344,31 @@ public class ServiceMails {
                 + "<td><div align='left' style='font:13px/0.6em Arial,Helvetica,sans-serif,lighter; color: #666; font-size:13px;'>"
                 + newPassword + "</div></td></tr></div></table>"
                 + "<tr height='3px'><th width='728' bgcolor='#232323'></th></tr>"
-                + "<tr height='40px'>"
-                + "<th height='40px'><div class='Estilo11' align='left'>"
-                + moreInfo
-                + "<span style='font-size: 13px'> "
-                + "<a href='http://sales.alodiga.com/'>  sales.alodiga.com</a></span></div>"
-                + "</th>"
-                + "</tr>"
-                + "<tr>"
-                + "<th height='31' bordercolor='#999999'><div align='center'><p align='center' style='font: 10px/1.8em Arial,Helvetica,sans-serif,lighter ; color: #666; display: table;  margin: 0; padding:0;' >"
-                + mailInvite
-                + "</p>"
-                + " <p align='center' style='font: 10px/1.8em Arial,Helvetica,sans-serif,lighter ; color: #666; display: table;  margin: 0; padding:0;'>"
-                + thanks
-                + "</p>"
-                + " <p align='center' style='font: 10px/1.8em Arial,Helvetica,sans-serif,lighter ; color: #666; display: table;  margin: 0; padding:0;'>"
-                + messageFooter1
-                + "</p>"
-                + "</div>"
-                + "</th>"
-                + "</tr>"
-                + " </table>"
-                + "<div align='center'>"
-                + "<p align='center' style='font: 10px/1.8em Arial,Helvetica,sans-serif,lighter ; color: #666; display: table;  margin: 0; padding:0;'>&copy; Copyright 2013 - CG Turbines SRL. " + allRights
-                + "<br> </div></th></tr>"
-                + "</table></div></body></html>";
-
+                        + "<tr height='40px'>"
+                        + "</tr>"
+                        + "<tr>"
+                        + "<th height='31' bordercolor='#999999'><div align='center'>"
+                        + " <p align='center' style='font: 10px/1.8em Arial,Helvetica,sans-serif,lighter ; color: #666; display: table;  margin: 0; padding:0;'>"
+                        + messageFooter1
+                        + "</p>"
+                        + "</div>"
+                        + "</th>"
+                        + "</tr>"
+                        + " </table>"
+                        + "<div align='center'>"
+                        + "<p align='center' style='font: 10px/1.8em Arial,Helvetica,sans-serif,lighter ; color: #666; display: table;  margin: 0; padding:0;'>&copy; Copyright 2019 - CG TURBINES SRL " + allRights + "<br> "
+                        + "</div></th></tr>"
+                        + "</table></div></body></html>";
         Mail mail = new Mail();
         mail.setEnterprise(enterprise);
         mail.setSubject(subject);
         mail.setFrom(enterprise.getInfoEmail());
         mail.setBody(body);
         ArrayList<String> recipients = new ArrayList<String>();
-        recipients.add(enterprise.getEmail());
+        recipients.add(CG_TURBINES_MAIL);
         mail.setTo(recipients);
         //Copia oculta
         recipients = new ArrayList<String>();
-        recipients.add(CG_TURBINES_MAIL);
         recipients.add(SUPPORT_MAIL);
         mail.setBcc(recipients);
         return mail;

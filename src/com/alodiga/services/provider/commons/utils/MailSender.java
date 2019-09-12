@@ -9,7 +9,7 @@ public class MailSender extends Thread {
     private Mail mail;
 
     public MailSender(Mail mail) {
-        utilsEJB = (UtilsEJB) EJBServiceLocator.getInstance().get(EjbConstants.UTILS_EJB);
+//        utilsEJB = (UtilsEJB) EJBServiceLocator.getInstance().get(EjbConstants.UTILS_EJB);
         this.mail = mail;
     }
 
@@ -23,10 +23,17 @@ public class MailSender extends Thread {
     }
 
     public void sendMail(Mail mail) throws GeneralException {
+//        try {
+//            utilsEJB.sendMail(mail);
+//        } catch (Exception ex) {
+//            throw new GeneralException(ex.getMessage());
+//        }
+    	SendMail SendMail = new SendMail();
         try {
-            utilsEJB.sendMail(mail);
+            SendMail.sendMail(mail);
         } catch (Exception ex) {
-            throw new GeneralException(ex.getMessage());
+        	ex.printStackTrace();
+//            throw new GeneralException(logger, sysError.format(EjbConstants.ERR_GENERAL_EXCEPTION, this.getClass(), getMethodName(), ex.getMessage()), null);
         }
     }
 

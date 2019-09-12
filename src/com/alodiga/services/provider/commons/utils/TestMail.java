@@ -13,6 +13,7 @@ import com.alodiga.services.provider.commons.models.Product;
 import com.alodiga.services.provider.commons.models.ProductSerie;
 import com.alodiga.services.provider.commons.models.Provider;
 import com.alodiga.services.provider.commons.models.Transaction;
+import com.alodiga.services.provider.commons.models.User;
 
 public class TestMail {
 	
@@ -49,6 +50,7 @@ public class TestMail {
 		product.setPartNumber("AGT675");
 		product.setDescription("Producto1");
 		product.setUbicationBox("caja 1");
+		product.setUbicationFolder("folder 1");
 		product.setAmount(10F);
 		productSerie.setProduct(product);
 		Provider provider = new Provider();
@@ -58,12 +60,23 @@ public class TestMail {
 		productSerie.setQuarantineReason("Fecha de vencimiento expirada");
 		quarantines.add(productSerie);
 		}
-		try {
-			ServiceMailDispatcher.sendQuarantineDataMail(enterprise, quarantines, "Cuarentena");
-		} catch (GeneralException e) {
-			e.printStackTrace();
-		}
+		User user = new User();
+		user.setFirstName("Yamelis");
+		user.setLastName("Almea");
+		user.setLogin("yalmea");
+		user.setEmail("yamealm@gmail.com");
+//		try {
+//			ServiceMailDispatcher.sendQuarantineDataMail(enterprise, quarantines, "Cuarentena");
+//		} catch (GeneralException e) {
+//			e.printStackTrace();
+//		}
 
+		try {
+			Mail mail = ServiceMails.getUserRecoveryPasswordMail(user, "123456", enterprise);
+			(new com.alodiga.services.provider.commons.utils.MailSender(mail)).start();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
 	}
 
 }
