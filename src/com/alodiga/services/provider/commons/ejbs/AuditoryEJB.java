@@ -13,6 +13,7 @@ import com.alodiga.services.provider.commons.genericEJB.EJBRequest;
 import com.alodiga.services.provider.commons.genericEJB.SPGenericEJB;
 import com.alodiga.services.provider.commons.models.Audit;
 import com.alodiga.services.provider.commons.models.AuditAction;
+import com.alodiga.services.provider.commons.models.Event;
 
 @Remote
 public interface AuditoryEJB extends SPGenericEJB {
@@ -37,7 +38,18 @@ public interface AuditoryEJB extends SPGenericEJB {
 
     public List<AuditAction> getAuditActionsByUserId(Long userId, Date beginningDate, Date endingDate) throws GeneralException, RegisterNotFoundException, NullParameterException, EmptyListException;
     
+    public Event loadEvent(EJBRequest request) throws RegisterNotFoundException, NullParameterException, GeneralException;
+    
     public String getNaturalFieldUser(EJBRequest request1, EJBRequest request2) throws NullParameterException, GeneralException;
     
     public String getNaturalFieldProfile(EJBRequest request1, EJBRequest request2) throws NullParameterException, GeneralException;
+    
+    public String getNaturalFieldMetrologicalControl(EJBRequest request1, EJBRequest request2) throws NullParameterException, GeneralException;
+    
+    public String getNaturalFieldCustomer(EJBRequest request1, EJBRequest request2) throws NullParameterException, GeneralException;
+    
+    public String getNaturalFieldBraund(EJBRequest request1, EJBRequest request2) throws NullParameterException, GeneralException;
+    
+    public String getNaturalFieldModel(EJBRequest request1, EJBRequest request2) throws NullParameterException, GeneralException;
+    
 }
