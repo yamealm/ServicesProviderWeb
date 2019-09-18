@@ -48,8 +48,13 @@ public interface AuditoryEJBLocal extends SPGenericEJB {
     
     public String getNaturalFieldCustomer(EJBRequest request1, EJBRequest request2) throws NullParameterException, GeneralException;
     
-  public String getNaturalFieldBraund(EJBRequest request1, EJBRequest request2) throws NullParameterException, GeneralException;
+    public String getNaturalFieldBraund(EJBRequest request1, EJBRequest request2) throws NullParameterException, GeneralException;
     
     public String getNaturalFieldModel(EJBRequest request1, EJBRequest request2) throws NullParameterException, GeneralException;
+    
+    public String getNaturalFieldProduct(EJBRequest request1, EJBRequest request2) throws NullParameterException, GeneralException;
+    
+    public String getNaturalFieldProvider(EJBRequest request1, EJBRequest request2) throws NullParameterException, GeneralException;
+
 
 }

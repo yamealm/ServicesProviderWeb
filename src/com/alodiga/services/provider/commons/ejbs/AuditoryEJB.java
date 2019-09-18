@@ -52,4 +52,8 @@ public interface AuditoryEJB extends SPGenericEJB {
     
     public String getNaturalFieldModel(EJBRequest request1, EJBRequest request2) throws NullParameterException, GeneralException;
     
+    public String getNaturalFieldProduct(EJBRequest request1, EJBRequest request2) throws NullParameterException, GeneralException;
+    
+    public String getNaturalFieldProvider(EJBRequest request1, EJBRequest request2) throws NullParameterException, GeneralException;
+    
 }
