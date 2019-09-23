@@ -42,5 +42,6 @@ public interface AccessControlEJB extends SPGenericEJB {
     public boolean validateLoginPreferences(EJBRequest request) throws NullParameterException, GeneralException, RegisterNotFoundException;
 
     public User validateUser(String login, String password) throws RegisterNotFoundException, NullParameterException, GeneralException, DisabledUserException;
-
+    
+    public List<User> getUsersWithParams(EJBRequest request) throws EmptyListException, GeneralException, NullParameterException; 
  }
