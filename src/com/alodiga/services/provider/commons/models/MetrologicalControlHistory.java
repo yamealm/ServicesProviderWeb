@@ -33,6 +33,9 @@ public class MetrologicalControlHistory extends AbstractSPEntity implements Seri
     private Timestamp calibrationDate; 
     private Timestamp expirationDate; 
     private String observation;
+    @ManyToOne(cascade = {CascadeType.REFRESH})
+    @JoinColumn(name = "categoryId")
+    private Category category;
 
 
     public MetrologicalControlHistory() {
@@ -93,6 +96,15 @@ public class MetrologicalControlHistory extends AbstractSPEntity implements Seri
 
 	public void setObservation(String observation) {
 		this.observation = observation;
+	}
+	
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 
 	@Override
