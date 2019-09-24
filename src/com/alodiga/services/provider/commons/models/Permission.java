@@ -73,7 +73,7 @@ public class Permission extends AbstractSPEntity implements Serializable {
     public static Long SEND_SMS = 50L;
     public static Long VIEW_SMS = 51L;
     public static Long AUDIT_ACTIONS = 52L;
-    public static Long LIST_TRANSACTION = 53L;
+    public static Long LIST_AUDI = 53L;
     public static Long AUTOMATIC_PROCESS = 54L;
     public static Long VIEW_TRANSACTION = 55L;
     public static Long LIST_ACCOUNTS = 56L;
