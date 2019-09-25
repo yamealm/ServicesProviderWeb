@@ -21,7 +21,9 @@ import com.alodiga.services.provider.commons.utils.QueryConstants;
 @Table(name = "product")
 @NamedQueries({
     @NamedQuery(name = QueryConstants.PRODUCTS_BY_ENTERPRISE,
-    query = "SELECT p FROM Product p WHERE p.enterprise.id =:enterpriseId")
+    query = "SELECT p FROM Product p WHERE p.enterprise.id =:enterpriseId"),
+    @NamedQuery(name = QueryConstants.LOAD_PRODUCT_BY_PART_NUMBER,
+    query = "SELECT p FROM Product p WHERE p.partNumber =:partNumber")
 })
 public class Product extends AbstractSPEntity implements Serializable {
 

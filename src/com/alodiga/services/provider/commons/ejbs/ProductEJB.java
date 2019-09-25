@@ -65,4 +65,8 @@ public interface ProductEJB extends SPGenericEJB {
     public List<Product> getProductsByParams(EJBRequest request) throws GeneralException, EmptyListException, NullParameterException;
     
     public List<MetrologicalControlHistory> getMetrologicalControlDefeated(int dayEnding) throws GeneralException, NullParameterException, EmptyListException;
+    
+    public boolean existProductByPartNumber(EJBRequest request) throws NullParameterException, GeneralException;
+    
+    public Product loadProductByPartNumber(EJBRequest request) throws RegisterNotFoundException, NullParameterException, GeneralException;
 }
