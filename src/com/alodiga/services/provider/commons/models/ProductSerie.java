@@ -19,7 +19,7 @@ import com.alodiga.services.provider.commons.genericEJB.SPEntityListerner;
 @Entity
 @EntityListeners(SPEntityListerner.class)
 @Table(name = "product_serie")
-public class ProductSerie extends AbstractSPEntity implements Serializable {
+public class ProductSerie extends AbstractSPEntity implements Serializable,Cloneable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -285,5 +285,14 @@ public class ProductSerie extends AbstractSPEntity implements Serializable {
         }
         return sb.toString();
     }
-
+    
+    public Object clone(){
+    	ProductSerie obj=null;
+        try{
+            obj=(ProductSerie)super.clone();
+        }catch(CloneNotSupportedException ex){
+            System.out.println(" no se puede duplicar product_serie");
+        }
+        return obj;
+    }
 }

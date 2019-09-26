@@ -24,7 +24,7 @@ import com.alodiga.services.provider.commons.genericEJB.SPEntityListerner;
 @Entity
 @EntityListeners(SPEntityListerner.class)
 @Table(name = "transaction")
-public class Transaction extends AbstractSPEntity implements Serializable {
+public class Transaction extends AbstractSPEntity implements Serializable,Cloneable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -250,5 +250,13 @@ public class Transaction extends AbstractSPEntity implements Serializable {
         return super.getTableName(this.getClass());
     }
 
-   
+    public Object clone(){
+        Object obj=null;
+        try{
+            obj=super.clone();
+        }catch(CloneNotSupportedException ex){
+            System.out.println(" no se puede duplicar transaction");
+        }
+        return obj;
+    }
 }

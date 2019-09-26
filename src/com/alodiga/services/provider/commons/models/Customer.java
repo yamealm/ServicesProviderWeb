@@ -33,7 +33,7 @@ import javax.persistence.NamedQueries;
     query = "SELECT c FROM Customer c WHERE c.email=:email")
 })
 
-public class Customer extends AbstractSPEntity implements Serializable {
+public class Customer extends AbstractSPEntity implements Serializable ,Cloneable{
 
     private static final long serialVersionUID = 1L;
     public static final String LOGIN = "login";
@@ -180,4 +180,13 @@ public class Customer extends AbstractSPEntity implements Serializable {
         return sb.toString();
     }
 
+    public Object clone(){
+        Object obj=null;
+        try{
+            obj=super.clone();
+        }catch(CloneNotSupportedException ex){
+            System.out.println(" no se puede duplicar customer");
+        }
+        return obj;
+    }
 }

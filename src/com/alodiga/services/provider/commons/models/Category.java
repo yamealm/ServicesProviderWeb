@@ -13,7 +13,7 @@ import com.alodiga.services.provider.commons.genericEJB.AbstractSPEntity;
 
 @Entity
 @Table(name = "category")
-public class Category extends AbstractSPEntity implements Serializable {
+public class Category extends AbstractSPEntity implements Serializable,Cloneable {
 
     private static final long serialVersionUID = 1L;
     public static long STOCK = 1L;
@@ -68,5 +68,15 @@ public class Category extends AbstractSPEntity implements Serializable {
     @Override
     public String getTableName() throws TableNotFoundException {
         return super.getTableName(this.getClass());
+    }
+    
+    public Object clone(){
+        Object obj=null;
+        try{
+            obj=super.clone();
+        }catch(CloneNotSupportedException ex){
+            System.out.println(" no se puede duplicar category");
+        }
+        return obj;
     }
 }
