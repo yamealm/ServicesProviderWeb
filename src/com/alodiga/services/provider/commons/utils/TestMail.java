@@ -65,18 +65,18 @@ public class TestMail {
 		user.setLastName("Almea");
 		user.setLogin("yalmea");
 		user.setEmail("yamealm@gmail.com");
-//		try {
-//			ServiceMailDispatcher.sendQuarantineDataMail(enterprise, quarantines, "Cuarentena");
-//		} catch (GeneralException e) {
-//			e.printStackTrace();
-//		}
-
 		try {
-			Mail mail = ServiceMails.getUserRecoveryPasswordMail(user, "123456", enterprise);
-			(new com.alodiga.services.provider.commons.utils.MailSender(mail)).start();
-		} catch (Exception ex) {
-			ex.printStackTrace();
+			ServiceMailDispatcher.sendPendingDataMail(enterprise, quarantines, "Cuarentena");
+		} catch (GeneralException e) {
+			e.printStackTrace();
 		}
+
+//		try {
+//			Mail mail = ServiceMails.getUserRecoveryPasswordMail(user, "123456", enterprise);
+//			(new com.alodiga.services.provider.commons.utils.MailSender(mail)).start();
+//		} catch (Exception ex) {
+//			ex.printStackTrace();
+//		}
 	}
 
 }
