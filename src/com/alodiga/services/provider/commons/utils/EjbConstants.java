@@ -46,6 +46,7 @@ public class EjbConstants {
     public static final String MPI_CARD_EJB= "ejb/MobilePinInventoryIntegration/CardEJB";
     public static final String MPI_ACCESS_CONTROL_EJB= "ejb/MobilePinInventoryIntegration/AccessControlEJB";
     public static final String AUTOMATIC_PROCESS_TIMER_EJB = "ejb/services/provider/AutomaticProcessTimerEJB";
+    public static final String AUTOMATIC_PROCESS_CONTROL_TIMER_EJB = "ejb/services/provider/AutomaticProcessControlTimerEJB";
 
     //mensajes
      public static final String PIN_FACEBOOK_REFERENCE= "Compra Pin Electronico refenciado por facebook";
