@@ -88,5 +88,7 @@ public interface TransactionEJBLocal extends SPGenericEJB {
     public TransactionType loadTransactionTypebyId(Long id) throws NullParameterException, RegisterNotFoundException, GeneralException;
     
     public MetrologicalControl loadMetrologicalControlByInstrument(String instrumentId)throws RegisterNotFoundException, NullParameterException, GeneralException;
+    
+    public List<MetrologicalControlHistory> getMetrologicalControlDefeated(int dayEnding) throws GeneralException, NullParameterException, EmptyListException;
 }
 
