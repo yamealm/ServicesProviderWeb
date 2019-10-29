@@ -18,8 +18,8 @@ public class TransactionType extends AbstractSPEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public static long ADD = 1L;
-    public static long REMOVE = 2L;
+    public static long ENTRY = 1L;
+    public static long EXIT = 2L;
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

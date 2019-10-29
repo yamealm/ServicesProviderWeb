@@ -3,6 +3,7 @@ package com.alodiga.services.provider.commons.models;
 import java.io.Serializable;
 import java.lang.reflect.Field;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -59,13 +60,10 @@ public class Product extends AbstractSPEntity implements Serializable {
     private float inictialAmount;
     private float realAmount;
     private boolean enabled;
-   
-// 
-//    //bi-directional many-to-one association to Category
-//    @ManyToOne
-//    @JoinColumn(name = "categoryId")
-//    private Category category;
-    
+    @ManyToOne(cascade = {CascadeType.REFRESH})
+    @JoinColumn(name = "categoryId")
+    private Category category;
+
     public Product() {
     }
 
@@ -77,7 +75,6 @@ public class Product extends AbstractSPEntity implements Serializable {
         this.id = id;
     }
 
-   
 
     public String getPartNumber() {
 		return partNumber;
@@ -183,6 +180,15 @@ public class Product extends AbstractSPEntity implements Serializable {
 		this.realAmount = realAmount;
 	}
 	
+	
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
 	@Override
     public Object getPk() {
         return getId();
