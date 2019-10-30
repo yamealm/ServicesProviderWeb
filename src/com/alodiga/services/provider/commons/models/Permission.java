@@ -154,9 +154,6 @@ public class Permission extends AbstractSPEntity implements Serializable {
     public static Long VIEW_CALIBRATION = 135L;
     public static Long DELETE_CALIBRATION = 136L;
     public static Long DETAILED_REPORT_STOCK = 137L;
-    public static Long DETAILED_REPORT_TRANSIT = 138L;
-    public static Long DETAILED_REPORT_QUARANTINE = 139L;
-    public static Long DETAILED_REPORT_WAIT = 140L;
     
     private static final long serialVersionUID = 1L;
     @Id
