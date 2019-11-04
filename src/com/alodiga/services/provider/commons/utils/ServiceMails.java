@@ -19,13 +19,14 @@ import java.util.Properties;
 public class ServiceMails {
 
     public static String SUPPORT_MAIL = "yamealm@gmail.com";
-    public static String CG_TURBINES_MAIL = "yamealm@gmail.com";
+    public static String CG_TURBINES_MAIL = "turbinesweb@gmail.com";
+   
     
     public static Mail getPendingExpirationDataMail(Enterprise enterprise, List<ProductSerie> series , String processName) throws GeneralException {
 
         String hello = "Hola";
-        String subject = "CG Tubines SRL: Productos Pendiente por vencer.";
-        String text1 = "Hay registros requeridos para culminar el proceso de actualizaci&oacute;n.";
+        String subject = "CG Tubines SRL: Productos Proximos a vencer.";
+        String text1 = "Hay productos en Stock pr&oacute;ximos a vencer";
         String text2 = "Registros a incorporar:";
         String process = "Proceso de Actualizaci&oacute;n";
         String executed = "Ejecutado al:";
@@ -148,6 +149,14 @@ public class ServiceMails {
         mail.setBody(body);
         ArrayList<String> recipients = new ArrayList<String>();
         recipients.add(CG_TURBINES_MAIL);
+        if (!propiedades.getProperty("prop.mail1").equals("") && !propiedades.getProperty("prop.mail1").isEmpty())
+        	recipients.add(propiedades.getProperty("prop.mail1"));
+        if (!propiedades.getProperty("prop.mail2").equals("") && !propiedades.getProperty("prop.mail2").isEmpty())
+        	recipients.add(propiedades.getProperty("prop.mail2"));
+        if (!propiedades.getProperty("prop.mail3").equals("") && !propiedades.getProperty("prop.mail3").isEmpty())
+        	recipients.add(propiedades.getProperty("prop.mail3"));
+        if (!propiedades.getProperty("prop.mail4").equals("") && !propiedades.getProperty("prop.mail4").isEmpty())
+        	recipients.add(propiedades.getProperty("prop.mail4"));
         mail.setTo(recipients);
         //Copia oculta
         recipients = new ArrayList<String>();
@@ -159,8 +168,8 @@ public class ServiceMails {
     public static Mail getPendingExpirationDataMailControl(Enterprise enterprise, List<MetrologicalControlHistory> histories , String processName) throws GeneralException {
 
         String hello = "Hola";
-        String subject = "CG Tubines SRL: Productos Pendiente por vencer.";
-        String text1 = "Hay registros requeridos para culminar el proceso de actualizaci&oacute;n.";
+        String subject = "CG Tubines SRL: Productos Proximos a vencer.";
+        String text1 = "Hay productos en Control Metrol&oacute;gico pr&oacute;ximos a vencer";
         String text2 = "Registros a incorporar:";
         String process = "Proceso de Actualizaci&oacute;n";
         String executed = "Ejecutado al:";
@@ -247,7 +256,7 @@ public class ServiceMails {
                 body += "<tr height='20px'>"
                         + "<td " + style1 + ">" + history.getMetrologicalControl().getDesignation() + "</td>"
                         + "<td " + style1 + ">" + history.getMetrologicalControl().getInstrument() + "</td>"
-                        + "<td " + style1 + ">" + history.getMetrologicalControl().getBraund()+"/"+history.getMetrologicalControl().getModel() + "</td>"
+                        + "<td " + style1 + ">" + history.getMetrologicalControl().getBraund().getName()+"/"+history.getMetrologicalControl().getModel().getName() + "</td>"
                         + "<td " + style1 + ">" + history.getMetrologicalControl().getSerie() + "</td>"
                         + "<td " + style1 + ">" + history.getExpirationDate() + "</td>"
                         + "<td " + style1 + ">" + history.getCalibrationDate() + "</td>"
@@ -281,6 +290,14 @@ public class ServiceMails {
         mail.setBody(body);
         ArrayList<String> recipients = new ArrayList<String>();
         recipients.add(CG_TURBINES_MAIL);
+        if (!propiedades.getProperty("prop.mail1").equals("") && !propiedades.getProperty("prop.mail1").isEmpty())
+        	recipients.add(propiedades.getProperty("prop.mail1"));
+        if (!propiedades.getProperty("prop.mail2").equals("") && !propiedades.getProperty("prop.mail2").isEmpty())
+        	recipients.add(propiedades.getProperty("prop.mail2"));
+        if (!propiedades.getProperty("prop.mail3").equals("") && !propiedades.getProperty("prop.mail3").isEmpty())
+        	recipients.add(propiedades.getProperty("prop.mail3"));
+        if (!propiedades.getProperty("prop.mail4").equals("") && !propiedades.getProperty("prop.mail4").isEmpty())
+        	recipients.add(propiedades.getProperty("prop.mail4"));
         mail.setTo(recipients);
         //Copia oculta
         recipients = new ArrayList<String>();
@@ -301,7 +318,7 @@ public class ServiceMails {
         String allRights = "Todos los derechos reservados";
         String style1 = "style='font:13px/0.6em Arial,Helvetica,sans-serif,lighter; color: #666; font-size:13px;'";
         String style2 = "style='background-color: #555555;color:#ffffff;font:12px/1.8em Arial,Helvetica,sans-serif,lighter;font-weight:bold;padding-left:10px'";
-        Properties propiedades = new Properties();
+          Properties propiedades = new Properties();
         try {
      			propiedades.load(new FileInputStream("C:\\Users\\yamea\\eclipse-workspace\\ServicesProviderCommons\\src\\properties\\prop.properties"));
      		} catch (FileNotFoundException e) {
@@ -379,7 +396,7 @@ public class ServiceMails {
             	String date = "";
             	if (productSerie.getExpirationDate() != null) {
             		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-            		date = df.format(new Timestamp((new java.util.Date().getTime())));
+            		date = df.format(productSerie.getExpirationDate());
             	}
                 body += "<tr height='20px'>"
                         + "<td " + style1 + ">" + productSerie.getProduct().getPartNumber() + "</td>"
@@ -420,6 +437,14 @@ public class ServiceMails {
         mail.setBody(body);
         ArrayList<String> recipients = new ArrayList<String>();
         recipients.add(CG_TURBINES_MAIL);
+        if (!propiedades.getProperty("prop.mail1").equals("") && !propiedades.getProperty("prop.mail1").isEmpty())
+        	recipients.add(propiedades.getProperty("prop.mail1"));
+        if (!propiedades.getProperty("prop.mail2").equals("") && !propiedades.getProperty("prop.mail2").isEmpty())
+        	recipients.add(propiedades.getProperty("prop.mail2"));
+        if (!propiedades.getProperty("prop.mail3").equals("") && !propiedades.getProperty("prop.mail3").isEmpty())
+        	recipients.add(propiedades.getProperty("prop.mail3"));
+        if (!propiedades.getProperty("prop.mail4").equals("") && !propiedades.getProperty("prop.mail4").isEmpty())
+        	recipients.add(propiedades.getProperty("prop.mail4"));
         mail.setTo(recipients);
         //Copia oculta
         recipients = new ArrayList<String>();
@@ -431,8 +456,8 @@ public class ServiceMails {
     public static Mail getQuarantineDataMailControl(Enterprise enterprise, List<MetrologicalControlHistory> histories , String processName) throws GeneralException {
 
         String hello = "Hola";
-        String subject = "CG Tubines SRL: Productos que ingresaron a Cuarentena.";
-        String text1 = "Existen productos que entraron a cuarentena de manera autom&aacute;tica.";
+        String subject = "CG Tubines SRL: Productos de Control Metrologico que ingresaron a Cuarentena.";
+        String text1 = "Existen productos de control metrologico que entraron a cuarentena de manera autom&aacute;tica.";
         String text2 = "Productos que ingresaron:";
         String process = "Proceso de Actualizaci&oacute;n";
         String executed = "Ejecutado al:";
@@ -502,21 +527,21 @@ public class ServiceMails {
                     + "Productos"
                     + "</p></th></tr>"
                     + "<tr><th><div>"
-                    + "<table width='725' border='0'>"
+                    + "<table width='1025' border='0'>"
                     + "<tr align='center'>"
-                    + "<th width='365' " + style2 + ">Desgnacion</th>"
-                    + "<th width='360' " + style2 + ">Instrumento</th>"
-                    + "<th width='365' " + style2 + ">Marca/Modelo</th>"
-                    + "<th width='360' " + style2 + ">Numero de Serie</th>"
-                    + "<th width='365' " + style2 + ">Fecha de Expiracion</th>"
-                    + "<th width='360' " + style2 + ">Fecha de Calibracion</th>"
+                    + "<th width='415' " + style2 + ">Desgnacion</th>"
+                    + "<th width='410' " + style2 + ">Instrumento</th>"
+                    + "<th width='415' " + style2 + ">Marca/Modelo</th>"
+                    + "<th width='410' " + style2 + ">Numero de Serie</th>"
+                    + "<th width='415' " + style2 + ">Fecha de Expiracion</th>"
+                    + "<th width='410' " + style2 + ">Fecha de Calibracion</th>"
                     + "</tr>";
 
             for (MetrologicalControlHistory history : histories) {
                 body += "<tr height='20px'>"
                         + "<td " + style1 + ">" + history.getMetrologicalControl().getDesignation() + "</td>"
                         + "<td " + style1 + ">" + history.getMetrologicalControl().getInstrument() + "</td>"
-                        + "<td " + style1 + ">" + history.getMetrologicalControl().getBraund()+"/"+history.getMetrologicalControl().getModel() + "</td>"
+                        + "<td " + style1 + ">" + history.getMetrologicalControl().getBraund().getName()+"/"+history.getMetrologicalControl().getModel().getName() + "</td>"
                         + "<td " + style1 + ">" + history.getMetrologicalControl().getSerie() + "</td>"
                         + "<td " + style1 + ">" + history.getExpirationDate() + "</td>"
                         + "<td " + style1 + ">" + history.getCalibrationDate() + "</td>"
@@ -550,6 +575,14 @@ public class ServiceMails {
         mail.setBody(body);
         ArrayList<String> recipients = new ArrayList<String>();
         recipients.add(CG_TURBINES_MAIL);
+        if (!propiedades.getProperty("prop.mail1").equals("") && !propiedades.getProperty("prop.mail1").isEmpty())
+        	recipients.add(propiedades.getProperty("prop.mail1"));
+        if (!propiedades.getProperty("prop.mail2").equals("") && !propiedades.getProperty("prop.mail2").isEmpty())
+        	recipients.add(propiedades.getProperty("prop.mail2"));
+        if (!propiedades.getProperty("prop.mail3").equals("") && !propiedades.getProperty("prop.mail3").isEmpty())
+        	recipients.add(propiedades.getProperty("prop.mail3"));
+        if (!propiedades.getProperty("prop.mail4").equals("") && !propiedades.getProperty("prop.mail4").isEmpty())
+        	recipients.add(propiedades.getProperty("prop.mail4"));
         mail.setTo(recipients);
         //Copia oculta
         recipients = new ArrayList<String>();
@@ -647,7 +680,7 @@ public class ServiceMails {
         mail.setFrom(enterprise.getInfoEmail());
         mail.setBody(body);
         ArrayList<String> recipients = new ArrayList<String>();
-        recipients.add(CG_TURBINES_MAIL);
+        recipients.add(user.getEmail());
         mail.setTo(recipients);
         //Copia oculta
         recipients = new ArrayList<String>();

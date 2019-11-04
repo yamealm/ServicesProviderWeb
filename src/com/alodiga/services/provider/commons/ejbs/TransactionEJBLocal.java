@@ -69,6 +69,8 @@ public interface TransactionEJBLocal extends SPGenericEJB {
     
     public List<ProductSerie> searchProductSerieByCategoryId(Long categoryId) throws GeneralException, NullParameterException, EmptyListException;
     
+    public MetrologicalControl loadControlByInstrument(EJBRequest request) throws RegisterNotFoundException, NullParameterException, GeneralException;
+    
     public List<TransactionType> getTransactionTypes() throws GeneralException, NullParameterException, EmptyListException;
     
     public MetrologicalControl saveMetrologicalControl(MetrologicalControl metrologicalControl ,MetrologicalControlHistory metrologicalControlHistory) throws GeneralException, NullParameterException ,RegisterNotFoundException;
@@ -92,5 +94,7 @@ public interface TransactionEJBLocal extends SPGenericEJB {
     public List<MetrologicalControlHistory> getMetrologicalControlDefeated(int dayEnding) throws GeneralException, NullParameterException, EmptyListException;
     
     public List<ProductSerie> searchProductSerieByCategoryIdReport(Long categoryId,Long transactionType) throws GeneralException, NullParameterException, EmptyListException;
+    
+    public ProductSerie loadLastProductSerieByProductId(Long productId) throws GeneralException, RegisterNotFoundException, NullParameterException;
 }
 

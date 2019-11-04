@@ -20,6 +20,10 @@ import com.alodiga.services.provider.commons.utils.QueryConstants;
 
 @Entity
 @Table(name = "metrological_control")
+@NamedQueries({
+    @NamedQuery(name = QueryConstants.LOAD_CONTROL_BY_INSTRUMENT,
+    query = "SELECT c FROM MetrologicalControl c WHERE c.instrument =:instrument")
+})
 public class MetrologicalControl extends AbstractSPEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;

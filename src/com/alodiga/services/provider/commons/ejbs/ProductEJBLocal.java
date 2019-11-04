@@ -11,6 +11,7 @@ import com.alodiga.services.provider.commons.exceptions.RegisterNotFoundExceptio
 import com.alodiga.services.provider.commons.genericEJB.EJBRequest;
 import com.alodiga.services.provider.commons.genericEJB.SPGenericEJB;
 import com.alodiga.services.provider.commons.models.Category;
+import com.alodiga.services.provider.commons.models.MetrologicalControl;
 import com.alodiga.services.provider.commons.models.MetrologicalControlHistory;
 import com.alodiga.services.provider.commons.models.Product;
 import com.alodiga.services.provider.commons.models.ProductSerie;
@@ -67,4 +68,5 @@ public interface ProductEJBLocal extends SPGenericEJB {
     public boolean existProductByPartNumber(EJBRequest request) throws NullParameterException, GeneralException;
     
     public Product loadProductByPartNumber(EJBRequest request) throws RegisterNotFoundException, NullParameterException, GeneralException;
-}
+    
+ }

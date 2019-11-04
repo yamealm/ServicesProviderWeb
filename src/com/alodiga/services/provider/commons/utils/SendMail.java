@@ -112,7 +112,7 @@ public class SendMail {
 
             // Lo enviamos.
             Transport t = session.getTransport("smtp");
-            t.connect("yamealm@gmail.com", "C4m1l4--");
+            t.connect("turbinesweb@gmail.com", "turbines123");
             t.sendMessage(message, message.getAllRecipients());
 
 //            Transport t = session.getTransport("smtp");
