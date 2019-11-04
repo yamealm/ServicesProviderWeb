@@ -84,6 +84,8 @@ public class QueryConstants {
     public static final String PARAM_EVENT_ID = "eventTypeId";
     public static final String PARAM_BEGINNING_DATE = "beginningDate";
     public static final String PARAM_ENDING_DATE = "endingDate";
+    public static final String PARAM_BEGINNING_DATE_EXIT = "beginningDateExit";
+    public static final String PARAM_ENDING_DATE_EXIT = "endingDateExit";
     public static final String PARAM_NOW_DATE = "nowDate";
     public static final String PARAM_USER_RESPONDER_ID = "userResponderId";
     public static final String PARAM_DISTRIBUTOR_RESPONDER_ID = "distributorResponderId";
