@@ -179,4 +179,5 @@ public class QueryConstants {
     public static final String LOAD_PRODUCT_BY_PART_NUMBER = "loadProductByPartNumber";
     public static final String LIST_PRODUCT = "listProduct";
     public static final String LOAD_CONTROL_BY_INSTRUMENT = "loadControlByInstrument";
+    public static final String PARAM_CONTROL = "metrologicalControlId";
 }

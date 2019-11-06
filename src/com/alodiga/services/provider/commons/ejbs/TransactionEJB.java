@@ -16,7 +16,6 @@ import com.alodiga.services.provider.commons.models.Condicion;
 import com.alodiga.services.provider.commons.models.MetrologicalControl;
 import com.alodiga.services.provider.commons.models.MetrologicalControlHistory;
 import com.alodiga.services.provider.commons.models.Product;
-import com.alodiga.services.provider.commons.models.ProductHistory;
 import com.alodiga.services.provider.commons.models.ProductSerie;
 import com.alodiga.services.provider.commons.models.Transaction;
 import com.alodiga.services.provider.commons.models.TransactionType;
@@ -45,12 +44,7 @@ public interface TransactionEJB extends SPGenericEJB {
 
     public Transaction loadTransactionById(Long id) throws GeneralException, RegisterNotFoundException, NullParameterException;
 
-    public ProductHistory loadLastProductHistoryByProductId(Long productId) throws GeneralException, RegisterNotFoundException, NullParameterException;
- 
-    public ProductHistory saveProductHistory(EJBRequest request) throws GeneralException, NullParameterException;
-
-    public boolean validateBalance(ProductHistory currentProductHistory, float amount, boolean add) throws NegativeBalanceException;
-    
+     
     public Transaction saveTransactionStock(Transaction transaction, List<ProductSerie> productSeries ) throws GeneralException, NullParameterException, NegativeBalanceException,RegisterNotFoundException;
     
     public Transaction saveEgressStock(Transaction transaction , List<ProductSerie> productSeries) throws GeneralException, NullParameterException, NegativeBalanceException,RegisterNotFoundException;

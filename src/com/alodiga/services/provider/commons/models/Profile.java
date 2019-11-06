@@ -32,8 +32,6 @@ public class Profile extends AbstractSPEntity implements Serializable {
     private List<PermissionHasProfile> permissionHasProfiles;
     @OneToMany(mappedBy = "profile", fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
     private List<ProfileData> profileData;
-    @OneToMany(mappedBy = "profile", fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
-    private List<ReportHasProfile> reportHasProfiles;
 
     public Profile() {
     }
@@ -76,14 +74,6 @@ public class Profile extends AbstractSPEntity implements Serializable {
 
     public void setProfileData(List<ProfileData> profileData) {
         this.profileData = profileData;
-    }
-
-    public List<ReportHasProfile> getReportHasProfiles() {
-        return this.reportHasProfiles;
-    }
-
-    public void setReportHasProfiles(List<ReportHasProfile> reportHasProfiles) {
-        this.reportHasProfiles = reportHasProfiles;
     }
 
     @Override

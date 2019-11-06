@@ -13,32 +13,23 @@ import com.alodiga.services.provider.commons.exceptions.RegisterNotFoundExceptio
 import com.alodiga.services.provider.commons.genericEJB.EJBRequest;
 import com.alodiga.services.provider.commons.genericEJB.SPGenericEJB;
 import com.alodiga.services.provider.commons.models.Braund;
-import com.alodiga.services.provider.commons.models.City;
 import com.alodiga.services.provider.commons.models.ControlType;
 import com.alodiga.services.provider.commons.models.Country;
 import com.alodiga.services.provider.commons.models.CountryHasProvider;
 import com.alodiga.services.provider.commons.models.CountryTranslation;
-import com.alodiga.services.provider.commons.models.County;
 import com.alodiga.services.provider.commons.models.Currency;
 import com.alodiga.services.provider.commons.models.EnterCalibration;
 import com.alodiga.services.provider.commons.models.Enterprise;
 import com.alodiga.services.provider.commons.models.Language;
-import com.alodiga.services.provider.commons.models.Model; 
+import com.alodiga.services.provider.commons.models.Model;
 import com.alodiga.services.provider.commons.models.Provider;
 import com.alodiga.services.provider.commons.models.QuarantineStatus;
-import com.alodiga.services.provider.commons.models.State;
 import com.alodiga.services.provider.commons.models.TinType;
 import com.alodiga.services.provider.commons.utils.Mail;
 
 @SuppressWarnings(value = {"all"})
 @Local
 public interface UtilsEJBLocal extends SPGenericEJB {
-
-public List<City> getCitiesByCounty(EJBRequest request) throws EmptyListException, GeneralException, NullParameterException;
-
-    public List<City> getCitiesByState(EJBRequest request) throws EmptyListException, GeneralException, NullParameterException;
-
-    public List<County> getCountiesByState(EJBRequest request) throws EmptyListException, GeneralException, NullParameterException;
 
     public List<Country> getCountries(EJBRequest request) throws EmptyListException, GeneralException, NullParameterException;
 
@@ -50,13 +41,7 @@ public List<City> getCitiesByCounty(EJBRequest request) throws EmptyListExceptio
 
     public List<Language> getLanguages() throws EmptyListException, GeneralException, NullParameterException;
 
-    public List<State> getStateByCountry(EJBRequest request) throws EmptyListException, GeneralException, NullParameterException;
-
-    public City loadCity(EJBRequest request) throws RegisterNotFoundException, NullParameterException, GeneralException;
-
     public Country loadCountry(EJBRequest request) throws RegisterNotFoundException, NullParameterException, GeneralException;
-
-    public County loadCounty(EJBRequest request) throws RegisterNotFoundException, NullParameterException, GeneralException;
 
     public Currency loadCurrency(EJBRequest request) throws RegisterNotFoundException, NullParameterException, GeneralException;
 
@@ -72,9 +57,6 @@ public List<City> getCitiesByCounty(EJBRequest request) throws EmptyListExceptio
     public Enterprise loadEnterprise(EJBRequest request) throws RegisterNotFoundException, NullParameterException, GeneralException;
 
     public Language loadLanguage(EJBRequest request) throws RegisterNotFoundException, NullParameterException, GeneralException;
-
-    
-    public State loadState(EJBRequest request) throws RegisterNotFoundException, NullParameterException, GeneralException;
 
     public List<TinType> getTinTypes() throws EmptyListException, GeneralException, NullParameterException;
 

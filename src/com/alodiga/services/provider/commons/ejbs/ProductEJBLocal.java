@@ -69,4 +69,6 @@ public interface ProductEJBLocal extends SPGenericEJB {
     
     public Product loadProductByPartNumber(EJBRequest request) throws RegisterNotFoundException, NullParameterException, GeneralException;
     
+    public List<MetrologicalControlHistory> loadMetrologicalControlHistory(EJBRequest request) throws GeneralException, NullParameterException, EmptyListException;
+    
  }

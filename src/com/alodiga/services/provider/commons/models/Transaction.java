@@ -62,8 +62,6 @@ public class Transaction extends AbstractSPEntity implements Serializable,Clonea
     private String quarantineReason;
     private Float amount;
     private String work;
-    @OneToMany(mappedBy = "transaction", cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
-    private List<ProductHistory> productHistories;
 
     public Transaction() {
     }
@@ -176,14 +174,6 @@ public class Transaction extends AbstractSPEntity implements Serializable,Clonea
 
 	public void setQuarantineReason(String quarantineReason) {
 		this.quarantineReason = quarantineReason;
-	}
-
-	public List<ProductHistory> getProductHistories() {
-		return productHistories;
-	}
-
-	public void setProductHistories(List<ProductHistory> productHistories) {
-		this.productHistories = productHistories;
 	}
 
 	public TransactionType getTransactionType() {
