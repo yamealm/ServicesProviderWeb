@@ -46,8 +46,8 @@ public class Enterprise extends AbstractSPEntity implements Serializable {
     @JoinColumn(name = "countryId")
     private Country country;
 //    //bi-directional many-to-one association to EnterpriseHasTinType
-//    @OneToMany(mappedBy = "enterprise", fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH})
-//    private List<EnterpriseHasTinType> enterpriseHasTinTypes;
+    @OneToMany(mappedBy = "enterprise", fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH})
+    private List<EnterpriseHasEmail> enterpriseHasEmail;
 
 
     public Enterprise() {
@@ -141,15 +141,16 @@ public class Enterprise extends AbstractSPEntity implements Serializable {
         this.country = country;
     }
 
-//    public List<EnterpriseHasTinType> getEnterpriseHasTinTypes() {
-//        return this.enterpriseHasTinTypes;
-//    }
-//
-//    public void setEnterpriseHasTinTypes(List<EnterpriseHasTinType> enterpriseHasTinTypes) {
-//        this.enterpriseHasTinTypes = enterpriseHasTinTypes;
-//    }
 
-    @Override
+    public List<EnterpriseHasEmail> getEnterpriseHasEmail() {
+		return enterpriseHasEmail;
+	}
+
+	public void setEnterpriseHasEmail(List<EnterpriseHasEmail> enterpriseHasEmail) {
+		this.enterpriseHasEmail = enterpriseHasEmail;
+	}
+
+	@Override
     public String toString() {
         return super.toString();
     }

@@ -92,5 +92,7 @@ public interface TransactionEJB extends SPGenericEJB {
     public MetrologicalControl loadControlByInstrument(EJBRequest request) throws RegisterNotFoundException, NullParameterException, GeneralException;
     
     public ProductSerie loadLastProductSerieByProductId(Long productId) throws GeneralException, RegisterNotFoundException, NullParameterException;
+    
+    public Transaction saveEgress(Transaction transaction , List<ProductSerie> productSeries) throws GeneralException, NullParameterException, NegativeBalanceException,RegisterNotFoundException;
 }
 

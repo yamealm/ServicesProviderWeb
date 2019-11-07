@@ -20,6 +20,7 @@ import com.alodiga.services.provider.commons.models.CountryTranslation;
 import com.alodiga.services.provider.commons.models.Currency;
 import com.alodiga.services.provider.commons.models.EnterCalibration;
 import com.alodiga.services.provider.commons.models.Enterprise;
+import com.alodiga.services.provider.commons.models.EnterpriseHasEmail;
 import com.alodiga.services.provider.commons.models.Language;
 import com.alodiga.services.provider.commons.models.Model;
 import com.alodiga.services.provider.commons.models.Provider;
@@ -104,5 +105,11 @@ public interface UtilsEJB extends SPGenericEJB {
     public EnterCalibration saveEnterCalibration(EnterCalibration enterCalibration) throws NullParameterException, GeneralException;
     
     public List<QuarantineStatus> getQuaratineStatus() throws EmptyListException, GeneralException, NullParameterException;
+    
+    public void deleteEmail(EnterpriseHasEmail email)throws  GeneralException;
+    
+    public EnterpriseHasEmail saveEnterpriseHasEmail(EnterpriseHasEmail email) throws NullParameterException, GeneralException;
+    
+    public List<EnterpriseHasEmail> getEnterpriseHasEmails() throws EmptyListException, GeneralException, NullParameterException;
  
   }

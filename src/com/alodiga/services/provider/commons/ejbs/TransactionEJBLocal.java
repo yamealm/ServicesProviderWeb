@@ -90,5 +90,7 @@ public interface TransactionEJBLocal extends SPGenericEJB {
     public List<ProductSerie> searchProductSerieByCategoryIdReport(Long categoryId,Long transactionType) throws GeneralException, NullParameterException, EmptyListException;
     
     public ProductSerie loadLastProductSerieByProductId(Long productId) throws GeneralException, RegisterNotFoundException, NullParameterException;
+    
+    public Transaction saveEgress(Transaction transaction , List<ProductSerie> productSeries) throws GeneralException, NullParameterException, NegativeBalanceException,RegisterNotFoundException;
 }
 
