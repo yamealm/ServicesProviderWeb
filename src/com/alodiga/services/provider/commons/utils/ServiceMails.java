@@ -1,6 +1,7 @@
 package com.alodiga.services.provider.commons.utils;
 import com.alodiga.services.provider.commons.exceptions.GeneralException;
 import com.alodiga.services.provider.commons.models.Enterprise;
+import com.alodiga.services.provider.commons.models.EnterpriseHasEmail;
 import com.alodiga.services.provider.commons.models.MetrologicalControlHistory;
 import com.alodiga.services.provider.commons.models.ProductSerie;
 import com.alodiga.services.provider.commons.models.User;
@@ -22,7 +23,7 @@ public class ServiceMails {
     public static String CG_TURBINES_MAIL = "turbinesweb@gmail.com";
    
     
-    public static Mail getPendingExpirationDataMail(Enterprise enterprise, List<ProductSerie> series , String processName) throws GeneralException {
+    public static Mail getPendingExpirationDataMail(Enterprise enterprise,List<EnterpriseHasEmail> emails, List<ProductSerie> series , String processName) throws GeneralException {
 
         String hello = "Hola";
         String subject = "CG Tubines SRL: Productos Proximos a vencer.";
@@ -149,14 +150,11 @@ public class ServiceMails {
         mail.setBody(body);
         ArrayList<String> recipients = new ArrayList<String>();
         recipients.add(CG_TURBINES_MAIL);
-        if (!propiedades.getProperty("prop.mail1").equals("") && !propiedades.getProperty("prop.mail1").isEmpty())
-        	recipients.add(propiedades.getProperty("prop.mail1"));
-        if (!propiedades.getProperty("prop.mail2").equals("") && !propiedades.getProperty("prop.mail2").isEmpty())
-        	recipients.add(propiedades.getProperty("prop.mail2"));
-        if (!propiedades.getProperty("prop.mail3").equals("") && !propiedades.getProperty("prop.mail3").isEmpty())
-        	recipients.add(propiedades.getProperty("prop.mail3"));
-        if (!propiedades.getProperty("prop.mail4").equals("") && !propiedades.getProperty("prop.mail4").isEmpty())
-        	recipients.add(propiedades.getProperty("prop.mail4"));
+        if (!emails.isEmpty()) {
+        	for (EnterpriseHasEmail email :emails) {
+        		recipients.add(email.getEmail());
+        	}
+        }
         mail.setTo(recipients);
         //Copia oculta
         recipients = new ArrayList<String>();
@@ -165,7 +163,7 @@ public class ServiceMails {
         return mail;
     }
     
-    public static Mail getPendingExpirationDataMailControl(Enterprise enterprise, List<MetrologicalControlHistory> histories , String processName) throws GeneralException {
+    public static Mail getPendingExpirationDataMailControl(Enterprise enterprise,List<EnterpriseHasEmail> emails, List<MetrologicalControlHistory> histories , String processName) throws GeneralException {
 
         String hello = "Hola";
         String subject = "CG Tubines SRL: Productos Proximos a vencer.";
@@ -290,14 +288,11 @@ public class ServiceMails {
         mail.setBody(body);
         ArrayList<String> recipients = new ArrayList<String>();
         recipients.add(CG_TURBINES_MAIL);
-        if (!propiedades.getProperty("prop.mail1").equals("") && !propiedades.getProperty("prop.mail1").isEmpty())
-        	recipients.add(propiedades.getProperty("prop.mail1"));
-        if (!propiedades.getProperty("prop.mail2").equals("") && !propiedades.getProperty("prop.mail2").isEmpty())
-        	recipients.add(propiedades.getProperty("prop.mail2"));
-        if (!propiedades.getProperty("prop.mail3").equals("") && !propiedades.getProperty("prop.mail3").isEmpty())
-        	recipients.add(propiedades.getProperty("prop.mail3"));
-        if (!propiedades.getProperty("prop.mail4").equals("") && !propiedades.getProperty("prop.mail4").isEmpty())
-        	recipients.add(propiedades.getProperty("prop.mail4"));
+        if (!emails.isEmpty()) {
+        	for (EnterpriseHasEmail email :emails) {
+        		recipients.add(email.getEmail());
+        	}
+        }
         mail.setTo(recipients);
         //Copia oculta
         recipients = new ArrayList<String>();
@@ -306,7 +301,7 @@ public class ServiceMails {
         return mail;
     }
     
-    public static Mail getQuarantineDataMail(Enterprise enterprise, List<ProductSerie> series , String processName) throws GeneralException {
+    public static Mail getQuarantineDataMail(Enterprise enterprise,List<EnterpriseHasEmail> emails, List<ProductSerie> series , String processName) throws GeneralException {
 
         String hello = "Hola";
         String subject = "CG Tubines SRL: Productos que ingresaron a Cuarentena.";
@@ -437,14 +432,11 @@ public class ServiceMails {
         mail.setBody(body);
         ArrayList<String> recipients = new ArrayList<String>();
         recipients.add(CG_TURBINES_MAIL);
-        if (!propiedades.getProperty("prop.mail1").equals("") && !propiedades.getProperty("prop.mail1").isEmpty())
-        	recipients.add(propiedades.getProperty("prop.mail1"));
-        if (!propiedades.getProperty("prop.mail2").equals("") && !propiedades.getProperty("prop.mail2").isEmpty())
-        	recipients.add(propiedades.getProperty("prop.mail2"));
-        if (!propiedades.getProperty("prop.mail3").equals("") && !propiedades.getProperty("prop.mail3").isEmpty())
-        	recipients.add(propiedades.getProperty("prop.mail3"));
-        if (!propiedades.getProperty("prop.mail4").equals("") && !propiedades.getProperty("prop.mail4").isEmpty())
-        	recipients.add(propiedades.getProperty("prop.mail4"));
+        if (!emails.isEmpty()) {
+        	for (EnterpriseHasEmail email :emails) {
+        		recipients.add(email.getEmail());
+        	}
+        }
         mail.setTo(recipients);
         //Copia oculta
         recipients = new ArrayList<String>();
@@ -453,7 +445,7 @@ public class ServiceMails {
         return mail;
     }
     
-    public static Mail getQuarantineDataMailControl(Enterprise enterprise, List<MetrologicalControlHistory> histories , String processName) throws GeneralException {
+    public static Mail getQuarantineDataMailControl(Enterprise enterprise,List<EnterpriseHasEmail> emails, List<MetrologicalControlHistory> histories , String processName) throws GeneralException {
 
         String hello = "Hola";
         String subject = "CG Tubines SRL: Productos de Control Metrologico que ingresaron a Cuarentena.";
@@ -575,14 +567,11 @@ public class ServiceMails {
         mail.setBody(body);
         ArrayList<String> recipients = new ArrayList<String>();
         recipients.add(CG_TURBINES_MAIL);
-        if (!propiedades.getProperty("prop.mail1").equals("") && !propiedades.getProperty("prop.mail1").isEmpty())
-        	recipients.add(propiedades.getProperty("prop.mail1"));
-        if (!propiedades.getProperty("prop.mail2").equals("") && !propiedades.getProperty("prop.mail2").isEmpty())
-        	recipients.add(propiedades.getProperty("prop.mail2"));
-        if (!propiedades.getProperty("prop.mail3").equals("") && !propiedades.getProperty("prop.mail3").isEmpty())
-        	recipients.add(propiedades.getProperty("prop.mail3"));
-        if (!propiedades.getProperty("prop.mail4").equals("") && !propiedades.getProperty("prop.mail4").isEmpty())
-        	recipients.add(propiedades.getProperty("prop.mail4"));
+        if (!emails.isEmpty()) {
+        	for (EnterpriseHasEmail email :emails) {
+        		recipients.add(email.getEmail());
+        	}
+        }
         mail.setTo(recipients);
         //Copia oculta
         recipients = new ArrayList<String>();
