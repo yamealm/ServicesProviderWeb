@@ -66,7 +66,7 @@ public class TestMail {
 		user.setLogin("yalmea");
 		user.setEmail("yamealm@gmail.com");
 		try {
-			ServiceMailDispatcher.sendPendingDataMail(enterprise, quarantines, "Cuarentena");
+			ServiceMailDispatcher.sendPendingDataMail(enterprise,null, quarantines, "Cuarentena");
 		} catch (GeneralException e) {
 			e.printStackTrace();
 		}
