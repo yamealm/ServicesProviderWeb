@@ -42,7 +42,6 @@ public class ProductSerie extends AbstractSPEntity implements Serializable,Clone
     private Float amount;
     private int quantity;
     private int quantityInto;
-    private int quantityRest;
     private String serie;
     private Timestamp cure;
     private Timestamp expirationDate; 
@@ -245,14 +244,6 @@ public class ProductSerie extends AbstractSPEntity implements Serializable,Clone
 	}
 	
 	
-
-	public int getQuantityRest() {
-		return quantityRest;
-	}
-
-	public void setQuantityRest(int quantityRest) {
-		this.quantityRest = quantityRest;
-	}
 
 	@Override
     public String toString() {
