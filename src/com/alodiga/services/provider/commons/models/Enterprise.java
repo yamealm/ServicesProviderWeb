@@ -32,6 +32,7 @@ public class Enterprise extends AbstractSPEntity implements Serializable {
     private String atcNumber;
     private String email;
     private boolean enabled;
+    private boolean automatic;
     private String infoEmail;
     private String invoiceAddress;
     private String name;
@@ -142,7 +143,15 @@ public class Enterprise extends AbstractSPEntity implements Serializable {
     }
 
 
-    public List<EnterpriseHasEmail> getEnterpriseHasEmail() {
+    public boolean getAutomatic() {
+		return automatic;
+	}
+
+	public void setAutomatic(boolean automatic) {
+		this.automatic = automatic;
+	}
+
+	public List<EnterpriseHasEmail> getEnterpriseHasEmail() {
 		return enterpriseHasEmail;
 	}
 
